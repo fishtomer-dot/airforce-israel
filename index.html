@@ -49,6 +49,13 @@ nav.scrolled{top:0;box-shadow:0 4px 30px rgba(0,0,0,0.06)}
 .nav-dropdown-menu a{display:block;padding:12px 16px;font-size:13px;color:var(--text);text-decoration:none;transition:background 0.2s,color 0.2s}
 .nav-dropdown-menu a::after{display:none}
 .nav-dropdown-menu a:hover{background:var(--bg-soft);color:var(--ink)}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:none;cursor:pointer;padding:0;z-index:1001}
+.nav-burger span{display:block;width:100%;height:2px;background:var(--ink);transition:all 0.25s}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.35);z-index:998}
+.nav-overlay.open{display:block}
 
 /* HERO */
 .hero{height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;margin-top:112px}
@@ -217,6 +224,18 @@ footer{background:var(--dark);color:rgba(255,255,255,0.55);padding:90px 60px 40p
 @media(max-width:768px){
   .top-banner{display:none}
   nav{top:0;padding:0 20px}
+  .nav-burger{display:flex}
+  .nav-links{position:fixed;top:76px;right:0;left:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--border);box-shadow:0 20px 40px rgba(0,0,0,0.08);max-height:0;overflow:hidden;transition:max-height 0.3s ease;z-index:999}
+  .nav-links.open{max-height:calc(100vh - 76px);overflow-y:auto}
+  .nav-links li{width:100%}
+  .nav-links a{display:block;padding:16px 20px;font-size:15px}
+  .nav-links a::after{display:none}
+  .nav-dropdown{position:static}
+  .nav-dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-top:1px solid var(--border);border-radius:0;display:none;padding:0;margin:0 0 0 0}
+  .nav-dropdown.open .nav-dropdown-menu{display:block}
+  .nav-dropdown.open .nav-caret{transform:rotate(180deg)}
+  .nav-dropdown-menu a{padding:14px 20px 14px 36px;font-size:14px}
+  .nav-cta{margin:12px 20px;text-align:center}
   .hero{margin-top:76px;height:90vh}
   .stats-band{grid-template-columns:1fr 1fr}
   .products-grid{grid-template-columns:1fr}
@@ -239,22 +258,24 @@ footer{background:var(--dark);color:rgba(255,255,255,0.55);padding:90px 60px 40p
 
 <nav id="mainNav">
   <img src="https://airforcespa.it/wp-content/uploads/airforcespa_logo.svg" class="nav-logo" alt="Airforce">
-  <ul class="nav-links">
-    <li class="nav-dropdown">
-      <a href="#products" onclick="goToCat('island');return false;">קולטים <span class="nav-caret">⌄</span></a>
+  <button class="nav-burger" id="navBurger" onclick="toggleMobileNav()" aria-label="תפריט"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li class="nav-dropdown" id="navDropdown">
+      <a href="#products" onclick="goToCat('island');closeMobileNav();return false;">קולטים <span class="nav-caret" onclick="event.preventDefault();event.stopPropagation();toggleDropdown();">⌄</span></a>
       <div class="nav-dropdown-menu">
-        <a onclick="goToCat('island')">קולטי אי מטבח</a>
-        <a onclick="goToCat('wall')">קולטי קיר</a>
-        <a onclick="goToCat('ceiling')">קולטים מובנים בארון</a>
-        <a onclick="goToCat('builtin')">קולטי תקרה</a>
+        <a onclick="goToCat('island');closeMobileNav();">קולטי אי מטבח</a>
+        <a onclick="goToCat('wall');closeMobileNav();">קולטי קיר</a>
+        <a onclick="goToCat('ceiling');closeMobileNav();">קולטים מובנים בארון</a>
+        <a onclick="goToCat('builtin');closeMobileNav();">קולטי תקרה</a>
       </div>
     </li>
-    <li><a onclick="goToCat('innova')" href="#products">כיריים משולבות קולט</a></li>
-    <li><a onclick="goToCat('cooktops')" href="#products">כיריים</a></li>
-    <li><a href="#about">אודות</a></li>
-    <li><a href="#contact">צור קשר</a></li>
+    <li><a onclick="goToCat('innova');closeMobileNav();" href="#products">כיריים משולבות קולט</a></li>
+    <li><a onclick="goToCat('cooktops');closeMobileNav();" href="#products">כיריים</a></li>
+    <li><a href="#about" onclick="closeMobileNav();">אודות</a></li>
+    <li><a href="#contact" onclick="closeMobileNav();">צור קשר</a></li>
   </ul>
 </nav>
+<div class="nav-overlay" id="navOverlay" onclick="closeMobileNav()"></div>
 
 <section class="hero">
   <div class="hero-bg">
@@ -1202,6 +1223,10 @@ function closeModalOuter(e){if(e.target===document.getElementById('modal'))close
 function submitForm(e){e.preventDefault();alert('תודה! פנייתך התקבלה.\nניצור איתך קשר תוך 24 שעות.');}
 
 window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>50);});
+
+function toggleMobileNav(){document.getElementById('navLinks').classList.toggle('open');document.getElementById('navBurger').classList.toggle('open');document.getElementById('navOverlay').classList.toggle('open');}
+function closeMobileNav(){document.getElementById('navLinks').classList.remove('open');document.getElementById('navBurger').classList.remove('open');document.getElementById('navOverlay').classList.remove('open');document.getElementById('navDropdown').classList.remove('open');}
+function toggleDropdown(){document.getElementById('navDropdown').classList.toggle('open');}
 
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.08});
 document.querySelectorAll('.product-card,.innova-card,.stat-item').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity 0.6s ease,transform 0.6s ease';io.observe(el);});
