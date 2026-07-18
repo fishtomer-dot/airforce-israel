@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIRFORCE | קולטי אדים וכיריים | ישראל</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1c1c1e;
+  --text:#3f3f42;
+  --text-soft:#6b6b6e;
+  --text-faint:#9a9a9c;
+  --bg:#ffffff;
+  --bg-soft:#f4f3f1;
+  --bg-soft2:#eceae6;
+  --dark:#111113;
+  --dark-soft:#1c1c1f;
+  --border:#e2e1de;
+  --border-strong:#c9c8c4;
+  --border-dark:rgba(255,255,255,0.12);
+  --white:#ffffff;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Heebo',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+
+/* TOP BANNER */
+.top-banner{background:var(--dark);color:rgba(255,255,255,0.9);text-align:center;padding:11px;font-size:13px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase}
+.top-banner span{color:#fff;margin:0 10px;opacity:0.35}
+
+/* NAV */
+nav{position:fixed;top:36px;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:82px;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all 0.3s}
+nav.scrolled{top:0;box-shadow:0 4px 30px rgba(0,0,0,0.06)}
+.nav-logo{height:36px;filter:none}
+.nav-links{display:flex;gap:8px;list-style:none;align-items:center}
+.nav-links a{font-family:'Heebo',sans-serif;font-size:13px;font-weight:400;letter-spacing:0.5px;color:var(--text);text-decoration:none;transition:all 0.25s;padding:10px 18px;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:6px;left:18px;right:18px;height:1px;background:var(--ink);transform:scaleX(0);transition:transform 0.25s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{background:var(--ink)!important;color:#fff!important;padding:11px 26px!important;font-weight:500!important;letter-spacing:1px!important}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:#000!important;color:#fff!important}
+.nav-dropdown{position:relative}
+.nav-caret{display:inline-block;font-size:11px;margin-right:4px;transition:transform 0.25s}
+.nav-dropdown:hover .nav-caret{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:100%;right:0;min-width:220px;background:#fff;border:1px solid var(--border);box-shadow:0 20px 40px rgba(0,0,0,0.08);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:all 0.2s;z-index:100}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-dropdown-menu a{display:block;padding:12px 16px;font-size:13px;color:var(--text);text-decoration:none;transition:background 0.2s,color 0.2s}
+.nav-dropdown-menu a::after{display:none}
+.nav-dropdown-menu a:hover{background:var(--bg-soft);color:var(--ink)}
+
+/* HERO */
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;margin-top:112px}
+.hero-bg{position:absolute;inset:0;background-color:#111}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.05) 35%,rgba(0,0,0,0.1) 65%,rgba(0,0,0,0.55) 100%)}
+.hero-content{position:absolute;z-index:2;left:0;right:0;bottom:0;text-align:center;color:white;max-width:640px;margin:0 auto;padding:0 24px 72px}
+.hero-tag{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-bottom:18px;font-weight:500;opacity:0;animation:fadeUp 1s 0.3s forwards}
+.hero-title{font-family:'Heebo',sans-serif;font-size:clamp(24px,3vw,32px);font-weight:300;line-height:1.3;letter-spacing:0;margin-bottom:28px;opacity:0;animation:fadeUp 1s 0.6s forwards}
+.hero-title em{font-style:normal;font-weight:600;color:#fff}
+.hero-sub{font-size:16px;font-weight:300;color:rgba(255,255,255,0.8);margin-bottom:52px;opacity:0;animation:fadeUp 1s 0.9s forwards;line-height:1.9;letter-spacing:0.3px}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 1s 1.2s forwards}
+.btn-gold{background:#fff;color:var(--ink);padding:16px 44px;font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid #fff;transition:all 0.3s;display:inline-block;cursor:pointer;font-family:'Heebo',sans-serif;font-weight:500}
+.btn-gold:hover{background:transparent;color:#fff}
+.btn-outline-w{background:transparent;color:white;padding:16px 44px;font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,0.5);transition:all 0.3s;display:inline-block}
+.btn-outline-w:hover{border-color:#fff;background:rgba(255,255,255,0.1)}
+.hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.55);font-size:10px;letter-spacing:3px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px;animation:fadeIn 2s 2s both}
+.scroll-line{width:1px;height:48px;background:linear-gradient(transparent,#fff);animation:scrollAnim 2s infinite}
+
+/* STATS */
+.stats-band{background:var(--dark);display:grid;grid-template-columns:repeat(3,1fr)}
+.stat-item{padding:48px 32px;text-align:center;border-right:1px solid rgba(255,255,255,0.1)}
+.stat-item:last-child{border-right:none}
+.stat-num{font-family:'Heebo',sans-serif;font-size:52px;font-weight:300;color:#fff;line-height:1}
+.stat-label{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:10px;font-weight:500}
+
+/* SECTION HEADER */
+.section-tag{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--text-soft);margin-bottom:14px;font-weight:600}
+.section-title{font-family:'Heebo',sans-serif;font-size:clamp(34px,4.5vw,54px);font-weight:300;line-height:1.08;color:var(--ink);letter-spacing:-0.5px}
+.section-title em{font-style:normal;font-weight:600;color:var(--ink)}
+
+/* CAT NAV */
+.cat-nav{padding:80px 60px 0;text-align:center}
+.cat-tabs{display:flex;gap:4px;justify-content:center;margin-top:48px;flex-wrap:wrap}
+.cat-tab{padding:14px 30px;font-size:15px;letter-spacing:0.3px;cursor:pointer;border:1px solid var(--border-strong);background:transparent;color:var(--text);transition:all 0.3s;font-family:'Heebo',sans-serif;font-weight:500}
+.cat-tab.active,.cat-tab:hover{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:600}
+
+/* PRODUCTS */
+.products-wrapper{padding:40px 60px 100px}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1400px;margin:0 auto}
+.product-card{background:var(--bg);cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;border:1px solid var(--border)}
+.product-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.1);border-color:var(--border-strong)}
+.prod-img-wrap{overflow:hidden;background:var(--bg-soft)}
+.prod-img-main{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 0.7s;display:block}
+.product-card:hover .prod-img-main{transform:scale(1.05)}
+.prod-thumb-strip{display:flex;gap:2px;padding:4px;background:var(--bg-soft2)}
+.prod-thumb{width:58px;height:42px;object-fit:cover;cursor:pointer;opacity:0.5;transition:opacity 0.2s;border:1px solid transparent}
+.prod-thumb.active,.prod-thumb:hover{opacity:1;border-color:var(--ink)}
+.prod-info{padding:24px 28px 28px;border-top:1px solid var(--border)}
+.prod-cat{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-soft);margin-bottom:8px;font-weight:700}
+.prod-name{font-family:'Heebo',sans-serif;font-size:23px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.25;letter-spacing:0.2px}
+.prod-specs-preview{font-size:14px;color:var(--text-soft);line-height:1.7;margin-bottom:18px;font-weight:500}
+.prod-link{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--ink);display:inline-flex;align-items:center;gap:8px;transition:color 0.3s;border-bottom:1px solid var(--border-strong);padding-bottom:3px;cursor:pointer;font-weight:600}
+.prod-link:hover{color:#000;border-color:#000}
+.products-section{display:none}
+.products-section.active{display:block}
+
+/* INNOVA */
+.innova-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:1400px;margin:0 auto}
+.innova-card{background:var(--bg);cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;border:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr}
+.innova-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.1);border-color:var(--border-strong)}
+.innova-imgs{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--bg-soft2)}
+.innova-imgs img{width:100%;height:200px;object-fit:cover;transition:transform 0.7s}
+.innova-card:hover .innova-imgs img{transform:scale(1.04)}
+.innova-body{padding:32px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border)}
+.innova-tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-soft);margin-bottom:10px;font-weight:700}
+.innova-name{font-family:'Heebo',sans-serif;font-size:23px;font-weight:600;margin-bottom:14px;color:var(--ink)}
+.innova-specs{font-size:14px;color:var(--text-soft);line-height:1.9;margin-bottom:20px;font-weight:500}
+
+/* CTA */
+.cta-band{position:relative;height:480px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-top:80px}
+.cta-bg{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url('https://airforcespa.it/wp-content/uploads/Frame_Schmidt_C_pp-1920x1440.jpg') center/cover;background-color:#111}
+.cta-content{position:relative;z-index:2;text-align:center;color:white;max-width:700px;padding:0 24px}
+.cta-content h2{font-family:'Heebo',sans-serif;font-size:clamp(32px,5vw,56px);font-weight:300;margin-bottom:20px;line-height:1.1}
+.cta-content h2 em{font-style:normal;font-weight:600;color:#fff}
+.cta-content p{font-size:16px;font-weight:300;color:rgba(255,255,255,0.8);margin-bottom:44px;line-height:1.9}
+
+/* DIVIDER */
+.gold-divider{height:1px;background:var(--border);margin:0 60px}
+
+/* ABOUT */
+.about-section{padding:120px 60px;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;max-width:1400px;margin:0 auto}
+.about-img-wrap{position:relative}
+.about-img-wrap img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.about-badge{position:absolute;bottom:-20px;right:-20px;width:130px;height:130px;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}
+.about-badge strong{font-family:'Heebo',sans-serif;font-size:40px;font-weight:300;line-height:1}
+.about-badge span{font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:500}
+.about-text h2{font-family:'Heebo',sans-serif;font-size:40px;font-weight:300;line-height:1.15;margin-bottom:24px;color:var(--ink)}
+.about-text h2 em{font-style:normal;font-weight:600;color:var(--ink)}
+.about-text p{font-size:15px;color:var(--text-soft);line-height:1.9;margin-bottom:18px;font-weight:400}
+.feat-list{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.feat-item{display:flex;align-items:flex-start;gap:12px}
+.feat-icon{width:34px;height:34px;background:var(--bg-soft);border:1px solid var(--border-strong);display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:14px;flex-shrink:0}
+.feat-text strong{display:block;font-size:13px;margin-bottom:4px;color:var(--ink)}
+.feat-text span{font-size:12px;color:var(--text-faint);font-weight:400}
+
+/* CONTACT */
+.contact-section{padding:120px 10vw;display:grid;grid-template-columns:1fr 1fr;gap:100px;background:var(--bg-soft);border-top:1px solid var(--border)}
+.contact-info h2{font-family:'Heebo',sans-serif;font-size:40px;font-weight:300;line-height:1.1;margin-bottom:24px;color:var(--ink)}
+.contact-info h2 em{font-style:normal;font-weight:600;color:var(--ink)}
+.contact-info p{font-size:14px;color:var(--text-soft);line-height:1.9;margin-bottom:36px;font-weight:400}
+.contact-det{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.det-icon{width:46px;height:46px;background:#fff;border:1px solid var(--border-strong);display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:18px;flex-shrink:0}
+.det-label{font-size:12px;color:var(--text-soft);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px;font-weight:500}
+.det-val{font-size:15px;font-weight:500;color:var(--ink)}
+.contact-form{display:flex;flex-direction:column;gap:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:8px}
+.form-group label{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--text-soft);font-weight:500}
+.form-group input,.form-group textarea,.form-group select{border:1px solid var(--border-strong);padding:14px 16px;font-family:'Heebo',sans-serif;font-size:14px;color:var(--ink);background:#fff;outline:none;transition:border-color 0.3s;appearance:none}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--ink)}
+.form-group select option{background:#fff;color:var(--ink)}
+.form-group textarea{resize:vertical;min-height:120px}
+.btn-submit{background:var(--ink);color:#fff;border:none;padding:18px 42px;font-family:'Heebo',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background 0.3s;align-self:flex-start;font-weight:500}
+.btn-submit:hover{background:#000}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,0.55);padding:90px 60px 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:64px}
+.footer-logo{height:26px;filter:brightness(0) invert(1);opacity:0.85;margin-bottom:20px}
+.footer-about{font-size:13px;line-height:1.9;font-weight:300;max-width:280px;color:rgba(255,255,255,0.4)}
+.footer-col h4{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.95);margin-bottom:24px;font-weight:600}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;margin-bottom:12px;font-weight:300;transition:color 0.3s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:32px;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,0.3)}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(20,20,20,0.7);z-index:2000;display:none;align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto}
+.modal-overlay.active{display:flex}
+.modal{background:#fff;max-width:1100px;width:100%;margin:auto;position:relative;border:1px solid var(--border)}
+.modal-close-btn{position:absolute;top:16px;right:16px;background:#fff;border:1px solid var(--border-strong);width:42px;height:42px;color:var(--ink);font-size:20px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:background 0.3s}
+.modal-close-btn:hover{background:var(--ink);color:#fff}
+.modal-gallery{background:var(--bg-soft);display:flex;flex-direction:column}
+.modal-main-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.modal-thumbs{display:flex;gap:3px;padding:6px;background:var(--bg-soft2);flex-wrap:wrap}
+.modal-thumb{width:68px;height:52px;object-fit:cover;cursor:pointer;opacity:0.5;border:1px solid transparent;transition:all 0.2s;flex-shrink:0}
+.modal-thumb.active,.modal-thumb:hover{opacity:1;border-color:var(--ink)}
+.modal-drawing-btn{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--bg-soft2);color:var(--ink);border:1px solid var(--border-strong);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all 0.3s;margin:4px 6px 6px;font-family:'Heebo',sans-serif;cursor:pointer;width:calc(100% - 12px)}
+.modal-drawing-btn:hover{background:var(--ink);color:#fff}
+.modal-top{display:grid;grid-template-columns:1fr 1fr;min-height:500px}
+.modal-body{padding:40px 36px;overflow-y:auto;display:flex;flex-direction:column;border-right:1px solid var(--border)}
+.modal-cat{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-soft);margin-bottom:8px;font-weight:700}
+.modal-name{font-family:'Heebo',sans-serif;font-size:30px;font-weight:500;margin-bottom:20px;line-height:1.15;color:var(--ink);letter-spacing:0.2px}
+.modal-tabs{display:flex;gap:2px;margin-bottom:20px;border-bottom:1px solid var(--border)}
+.modal-tab{padding:10px 16px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;color:var(--text-faint);background:none;border:none;font-family:'Heebo',sans-serif;transition:all 0.2s;border-bottom:2px solid transparent;margin-bottom:-1px}
+.modal-tab.active{color:var(--ink);border-bottom-color:var(--ink)}
+.modal-panel{display:none}
+.modal-panel.active{display:block}
+.specs-table{width:100%;border-collapse:collapse}
+.specs-table tr{border-bottom:1px solid var(--border)}
+.specs-table tr:last-child{border-bottom:none}
+.specs-table td{padding:10px 4px;font-size:13px;vertical-align:top}
+.specs-table td:first-child{color:var(--text-soft);width:52%;font-weight:400}
+.specs-table td:last-child{font-weight:500;color:var(--ink)}
+.downloads-list{display:flex;flex-direction:column;gap:8px}
+.download-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--border-strong);text-decoration:none;color:var(--ink);transition:all 0.3s}
+.download-item:hover{border-color:var(--ink);background:var(--bg-soft)}
+.dl-icon{width:34px;height:34px;background:var(--bg-soft2);border:1px solid var(--border-strong);display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:13px;flex-shrink:0}
+.dl-name{font-size:13px;font-weight:500;color:var(--ink)}
+.dl-type{font-size:12px;color:var(--text-soft);letter-spacing:1px;text-transform:uppercase;margin-top:2px;font-weight:500}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scrollAnim{0%,100%{opacity:0.2}50%{opacity:1}}
+
+@media(max-width:768px){
+  .top-banner{display:none}
+  nav{top:0;padding:0 20px}
+  .hero{margin-top:76px;height:90vh}
+  .stats-band{grid-template-columns:1fr 1fr}
+  .products-grid{grid-template-columns:1fr}
+  .innova-grid{grid-template-columns:1fr}
+  .innova-card{grid-template-columns:1fr}
+  .about-section{grid-template-columns:1fr;padding:60px 20px;gap:48px}
+  .contact-section{grid-template-columns:1fr;padding:60px 20px;gap:48px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
+  .modal-top{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .cat-nav,.products-wrapper{padding-inline:20px}
+  footer{padding:60px 20px 40px}
+  .gold-divider{margin:0 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="top-banner">🇮🇱 עיצוב איטלקי מקורי <span>|</span> התקנה מקצועית <span>|</span> שירות לאחר מכירה</div>
+
+<nav id="mainNav">
+  <img src="https://airforcespa.it/wp-content/uploads/airforcespa_logo.svg" class="nav-logo" alt="Airforce">
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="#products" onclick="goToCat('island');return false;">קולטים <span class="nav-caret">⌄</span></a>
+      <div class="nav-dropdown-menu">
+        <a onclick="goToCat('island')">קולטי אי מטבח</a>
+        <a onclick="goToCat('wall')">קולטי קיר</a>
+        <a onclick="goToCat('ceiling')">קולטים מובנים בארון</a>
+        <a onclick="goToCat('builtin')">קולטי תקרה</a>
+      </div>
+    </li>
+    <li><a onclick="goToCat('innova')" href="#products">כיריים משולבות קולט</a></li>
+    <li><a onclick="goToCat('cooktops')" href="#products">כיריים</a></li>
+    <li><a href="#about">אודות</a></li>
+    <li><a href="#contact">צור קשר</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg">
+    <video class="hero-video" autoplay muted loop playsinline poster="https://airforcespa.it/wp-content/uploads/VIS-Island-Ambiente_pp-3-1920x1426.jpg">
+      <source src="https://airforcespa.it/wp-content/uploads/Airforce-In-EveryBreath-ENG.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-tag">עיצוב איטלקי — פבריאנו, איטליה — מאז 1997</p>
+    <h1 class="hero-title">קולטי אדים וכיריים <em>AIRFORCE</em><br>עיצוב איטלקי, בישראל</h1>
+    <div class="hero-btns">
+      <a href="#products" class="btn-gold">גלה את המוצרים</a>
+      <a href="#contact" class="btn-outline-w">קבל הצעת מחיר</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>גלול</span><div class="scroll-line"></div></div>
+</section>
+
+<div class="stats-band">
+  <div class="stat-item"><div class="stat-num">25+</div><div class="stat-label">שנות ייצור</div></div>
+  <div class="stat-item"><div class="stat-num">80+</div><div class="stat-label">מדינות בעולם</div></div>
+  <div class="stat-item"><div class="stat-num">500K+</div><div class="stat-label">לקוחות מרוצים</div></div>
+</div>
+
+<div id="products" class="cat-nav">
+  <div class="section-tag">הקולקציה המלאה</div>
+  <h2 class="section-title">כל המוצרים של <em>AIRFORCE</em></h2>
+  <div class="cat-tabs">
+    <div class="cat-tab active" onclick="showCat('island',this)">קולטי אי</div>
+    <div class="cat-tab" onclick="showCat('wall',this)">קולטי קיר</div>
+    <div class="cat-tab" onclick="showCat('ceiling',this)">קולטים מובנים בארון</div>
+    <div class="cat-tab" onclick="showCat('builtin',this)">קולטי תקרה</div>
+    <div class="cat-tab" onclick="showCat('cooktops',this)">כיריים</div>
+    <div class="cat-tab" onclick="showCat('innova',this)">כיריים משולבות קולט</div>
+  </div>
+</div>
+
+<div class="products-wrapper">
+
+<!-- קולטי אי -->
+<div id="cat-island" class="products-section active"><div class="products-grid">
+
+<div class="product-card" onclick="openModal('vis-boxy-island')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-vbi" src="https://airforcespa.it/wp-content/uploads/VIS-Island-Ambiente_pp-2-1920x1426.jpg" alt="VIS BOXY ISLAND NO DROP" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=VIS+BOXY+ISLAND+NO+DROP&font=playfair-display'">
+    <div class="prod-thumb-strip">
+      <img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/VIS-Island-Ambiente_pp-2-1920x1426.jpg" onclick="event.stopPropagation();setThumb('vbi',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/VisBoxyIsland-120-IX-RawTest-1920x987.jpg" onclick="event.stopPropagation();setThumb('vbi',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/VIS-Island-Particolare-1320x1920.jpg" onclick="event.stopPropagation();setThumb('vbi',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Vis-isola-120-1920x987.jpg" onclick="event.stopPropagation();setThumb('vbi',this.src,this)" alt="">
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — אי מטבח</div>
+    <div class="prod-name">VIS BOXY ISLAND NO DROP</div>
+    <div class="prod-specs-preview">מידות: 120 ס"מ נירוסטה/שחור מט | 180 ס"מ</div>
+    <span class="prod-link">פרטים מלאים + גלריה ←</span>
+  </div>
+</div>
+
+<div class="product-card" onclick="openModal('antares')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-ant" src="https://airforcespa.it/wp-content/uploads/Antares-PerspView-1920x1292.jpg" alt="ANTARES" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=ANTARES&font=playfair-display'">
+    <div class="prod-thumb-strip">
+      <img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Antares-PerspView-1920x1292.jpg" onclick="event.stopPropagation();setThumb('ant',this.src,this)" alt="">
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — אי מטבח</div>
+    <div class="prod-name">ANTARES</div>
+    <div class="prod-specs-preview">מידות: 140 ס"מ</div>
+    <span class="prod-link">פרטים מלאים + סרטוט ←</span>
+  </div>
+</div>
+
+<div class="product-card" onclick="openModal('frame')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-frm" src="https://airforcespa.it/wp-content/uploads/Frame_Schmidt_C_pp-1920x1440.jpg" alt="FRAME" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=FRAME&font=playfair-display'">
+    <div class="prod-thumb-strip">
+      <img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Frame_Schmidt_C_pp-1920x1440.jpg" onclick="event.stopPropagation();setThumb('frm',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Frame-Ambiente-quadrato-1920x1920.jpg" onclick="event.stopPropagation();setThumb('frm',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Frame-Particolare-B-1920x949.jpg" onclick="event.stopPropagation();setThumb('frm',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Frame-portabicchieri-1920x1440.jpg" onclick="event.stopPropagation();setThumb('frm',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Frame-PortaTablet-1920x1440.jpg" onclick="event.stopPropagation();setThumb('frm',this.src,this)" alt="">
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — אי מטבח</div>
+    <div class="prod-name">FRAME</div>
+    <div class="prod-specs-preview">מידות: 140 / 180 ס"מ · צבעים: שחור מט</div>
+    <span class="prod-link">פרטים מלאים + גלריה ←</span>
+  </div>
+</div>
+
+<div class="product-card" onclick="openModal('side')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-sid" src="https://airforcespa.it/wp-content/uploads/Side-Frontale_pp-1920x1166.jpg" alt="SIDE" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=SIDE&font=playfair-display'">
+    <div class="prod-thumb-strip">
+      <img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Side-Frontale_pp-1920x1166.jpg" onclick="event.stopPropagation();setThumb('sid',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Side-Apertura-1-1920x1365.jpg" onclick="event.stopPropagation();setThumb('sid',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Side-Particolare-1920x1080.jpg" onclick="event.stopPropagation();setThumb('sid',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Side-ParticolareB-1920x1366.jpg" onclick="event.stopPropagation();setThumb('sid',this.src,this)" alt="">
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — אי מטבח</div>
+    <div class="prod-name">SIDE</div>
+    <div class="prod-specs-preview">מידות: 100 ס"מ</div>
+    <span class="prod-link">פרטים מלאים + גלריה ←</span>
+  </div>
+</div>
+
+<div class="product-card" onclick="openModal('tata')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-tat" src="https://airforcespa.it/wp-content/uploads/TATA-90-ambiente_pp-2-1920x1048.jpg" alt="TATA" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=TATA&font=playfair-display'">
+    <div class="prod-thumb-strip">
+      <img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/TATA-90-ambiente_pp-2-1920x1048.jpg" onclick="event.stopPropagation();setThumb('tat',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/TATA-90-ambiente-1-1920x1080.jpg" onclick="event.stopPropagation();setThumb('tat',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/TATA-150-ambiente-1-1920x1080.jpg" onclick="event.stopPropagation();setThumb('tat',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/TATA-Particolare-B-1-1920x1080.jpg" onclick="event.stopPropagation();setThumb('tat',this.src,this)" alt="">
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — אי מטבח</div>
+    <div class="prod-name">TATA</div>
+    <div class="prod-specs-preview">מידות: 90 / 120 / 150 ס"מ · צבעים: שחור מט</div>
+    <span class="prod-link">פרטים מלאים + גלריה ←</span>
+  </div>
+</div>
+
+<div class="product-card" onclick="openModal('downdraft')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-dd" src="https://airforcespa.it/wp-content/uploads/Downdraft-particolare-BK-1-1920x1358.jpg" alt="DOWNDRAFT" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=DOWNDRAFT&font=playfair-display'">
+    <div class="prod-thumb-strip">
+      <img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Downdraft-particolare-BK-1-1920x1358.jpg" onclick="event.stopPropagation();setThumb('dd',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Downdraft-ambiente-IX-2-1920x1358.jpg" onclick="event.stopPropagation();setThumb('dd',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Downdraft-particolare-Naked-2-1920x1358.jpg" onclick="event.stopPropagation();setThumb('dd',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Downdraft-mobile-aperto-2-1920x1440.jpg" onclick="event.stopPropagation();setThumb('dd',this.src,this)" alt="">
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — נשלף</div>
+    <div class="prod-name">DOWNDRAFT</div>
+    <div class="prod-specs-preview">מידות: 90 ס"מ</div>
+    <span class="prod-link">פרטים מלאים + גלריה ←</span>
+  </div>
+</div>
+
+<div class="product-card" onclick="openModal('sharp')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-shp" src="https://airforcespa.it/wp-content/uploads/Sharp-Rev3_pp-1920x1558.jpg" alt="SHARP" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=SHARP&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Sharp-Rev3_pp-1920x1558.jpg" onclick="event.stopPropagation();setThumb('shp',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Sharp-Rev2-1-1320x1920.jpg" onclick="event.stopPropagation();setThumb('shp',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/sharp-1.jpg" onclick="event.stopPropagation();setThumb('shp',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — אי מטבח</div>
+    <div class="prod-name">SHARP</div>
+    <div class="prod-specs-preview">מידות: 50 ס"מ · צבעים: נירוסטה / שחור / לבן</div>
+    <span class="prod-link">פרטים מלאים ←</span>
+  </div>
+</div>
+
+<div class="product-card" onclick="openModal('gaia')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-gai" src="https://airforcespa.it/wp-content/uploads/Gaia45-ambiente_pp-1920x1500.jpg" alt="GAIA" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=GAIA&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Gaia45-ambiente_pp-1920x1500.jpg" onclick="event.stopPropagation();setThumb('gai',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Gaia45-ambiente-3-1320x1920.jpg" onclick="event.stopPropagation();setThumb('gai',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Gaia-Island-Comando-5-1320x1920.jpg" onclick="event.stopPropagation();setThumb('gai',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — אי מטבח</div>
+    <div class="prod-name">GAIA</div>
+    <div class="prod-specs-preview">מידות: 45 ס"מ · צבעים: נירוסטה / שחור</div>
+    <span class="prod-link">פרטים מלאים ←</span>
+  </div>
+</div>
+
+<div class="product-card" onclick="openModal('q-bic-island')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-qbi" src="https://airforcespa.it/wp-content/uploads/Q-Bic-isola-cavi-particolare-rev2_pp-1920x1187.jpg" alt="Q-BIC ISLAND" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=Q-BIC+ISLAND&font=playfair-display'">
+    <div class="prod-thumb-strip">
+      <img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Q-Bic-isola-cavi-particolare-rev2_pp-1920x1187.jpg" onclick="event.stopPropagation();setThumb('qbi',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Q-Bic-isola-Cavi-1920x1080.jpg" onclick="event.stopPropagation();setThumb('qbi',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Q-Bic-isola-Particolare-1920x1080.jpg" onclick="event.stopPropagation();setThumb('qbi',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Q-Bic-isola-1920x1080.jpg" onclick="event.stopPropagation();setThumb('qbi',this.src,this)" alt="">
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — אי מטבח</div>
+    <div class="prod-name">Q-BIC ISLAND</div>
+    <div class="prod-specs-preview">מידות: 90 ס"מ (כבלים/מוטות) / 120 ס"מ · צבעים: שחור מט</div>
+    <span class="prod-link">פרטים מלאים ←</span>
+  </div>
+</div>
+
+
+<div class="product-card" onclick="openModal('f181')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-f181" src="https://airforcespa.it/wp-content/uploads/F181_bk_COPERTINApp-1-1920x1084.jpg" alt="F181" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=F181&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/F181_bk_COPERTINApp-1-1920x1084.jpg" onclick="event.stopPropagation();setThumb('f181',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F181-WH-Ambiente-1920x1080.jpg" onclick="event.stopPropagation();setThumb('f181',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F181-BK-Ambiente-1-1920x1080.jpg" onclick="event.stopPropagation();setThumb('f181',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — אי מטבח</div><div class="prod-name">F181</div><div class="prod-specs-preview">מידות: 45 ס"מ · צבעים: שחור / לבן</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('gaia-xxl')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-gaiaxxl" src="https://airforcespa.it/wp-content/uploads/Gaia-Island_pp-1920x1587.jpg" alt="GAIA XXL" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=GAIA+XXL&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Gaia-Island_pp-1920x1587.jpg" onclick="event.stopPropagation();setThumb('gaiaxxl',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Gaia-LowFront-100-BK-1-1320x1920.jpg" onclick="event.stopPropagation();setThumb('gaiaxxl',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Gaia-LowFront-100-IX-1-1320x1920.jpg" onclick="event.stopPropagation();setThumb('gaiaxxl',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — אי מטבח</div><div class="prod-name">GAIA XXL</div><div class="prod-specs-preview">מידות: 100 ס"מ · צבעים: נירוסטה / שחור</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('f181-xxl')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-f181xxl" src="https://airforcespa.it/wp-content/uploads/F181-XXL_BK_pp-1920x1440.jpg" alt="F181 XXL" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=F181+XXL&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/F181-XXL_BK_pp-1920x1440.jpg" onclick="event.stopPropagation();setThumb('f181xxl',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F181-XXL-100-BK-Ambiente-1920x1080.jpg" onclick="event.stopPropagation();setThumb('f181xxl',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F181-XXL-100-WH-Ambiente-1920x1080.jpg" onclick="event.stopPropagation();setThumb('f181xxl',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — אי מטבח</div><div class="prod-name">F181 XXL</div><div class="prod-specs-preview">מידות: 70 / 100 ס"מ · צבעים: שחור / לבן</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('ballerina')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-ball" src="https://airforcespa.it/wp-content/uploads/Ballerina_YOUNG_pp-1-1920x1147.jpg" alt="BALLERINA YOUNG" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=BALLERINA+YOUNG&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Ballerina_YOUNG_pp-1-1920x1147.jpg" onclick="event.stopPropagation();setThumb('ball',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/BallerinaAmbienteNeraECO-1920x1920.jpg" onclick="event.stopPropagation();setThumb('ball',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/BallerinaAmbienteBiancaECO-1920x1920.jpg" onclick="event.stopPropagation();setThumb('ball',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — אי מטבח</div><div class="prod-name">BALLERINA YOUNG</div><div class="prod-specs-preview">מידות: 47.5 ס"מ · צבעים: שחור / לבן</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('eclipse')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-ecl" src="https://airforcespa.it/wp-content/uploads/Air_fondo_ECLIPSE_NERO_HD_pp-1920x1920.jpg" alt="ECLIPSE" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=ECLIPSE&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Air_fondo_ECLIPSE_NERO_HD_pp-1920x1920.jpg" onclick="event.stopPropagation();setThumb('ecl',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Air_fondo_ECLIPSE_BIANCA_HD_pp-copia-1-rotated.jpg" onclick="event.stopPropagation();setThumb('ecl',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — אי מטבח</div><div class="prod-name">ECLIPSE</div><div class="prod-specs-preview">מידות: 90 ס"מ · צבעים: שחור / לבן / לבן מבריק</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('square-young')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-sqy" src="https://airforcespa.it/wp-content/uploads/Square-ambiente_NERA_YOUNG_pp-1920x1313.jpg" alt="SQUARE YOUNG" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=SQUARE+YOUNG&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Square-ambiente_NERA_YOUNG_pp-1920x1313.jpg" onclick="event.stopPropagation();setThumb('sqy',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Square-ambiente_WH_ECO-1920x1920.jpg" onclick="event.stopPropagation();setThumb('sqy',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/SquareParticolare_BK_ECO-1920x1920.jpg" onclick="event.stopPropagation();setThumb('sqy',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — אי מטבח</div><div class="prod-name">SQUARE YOUNG</div><div class="prod-specs-preview">מידות: 45×45 ס"מ · צבעים: שחור / לבן</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('square-crisalide')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-sqc" src="https://airforcespa.it/wp-content/uploads/Square-ambiente_NERA_crisalide_pp-2-1920x1312.jpg" alt="SQUARE CRISALIDE" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=SQUARE+CRISALIDE&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Square-ambiente_NERA_crisalide_pp-2-1920x1312.jpg" onclick="event.stopPropagation();setThumb('sqc',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Square-ambiente-1920x1920.jpg" onclick="event.stopPropagation();setThumb('sqc',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/SquareParticolare_NERA-1920x1920.jpg" onclick="event.stopPropagation();setThumb('sqc',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — אי מטבח</div><div class="prod-name">SQUARE CRISALIDE</div><div class="prod-specs-preview">מידות: 45×45 ס"מ · צבעים: שחור / לבן</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('f206')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-f206" src="https://airforcespa.it/wp-content/uploads/F206-intera_pp-1920x1217.jpg" alt="F206" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=F206&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/F206-intera_pp-1920x1217.jpg" onclick="event.stopPropagation();setThumb('f206',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F206-particolare-WH-1920x1357.jpg" onclick="event.stopPropagation();setThumb('f206',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F206-TSL-Schmidt-2-1920x1528.jpg" onclick="event.stopPropagation();setThumb('f206',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — אי מטבח</div><div class="prod-name">F206</div><div class="prod-specs-preview">מידות: 90 ס"מ · צבעים: שחור / לבן</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('f97')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-f97" src="https://airforcespa.it/wp-content/uploads/F97-90x60_COPERTINA_pp-1-1920x1240.jpg" alt="F97" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=F97&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/F97-90x60_COPERTINA_pp-1-1920x1240.jpg" onclick="event.stopPropagation();setThumb('f97',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F97-tse-1920x1080.jpg" onclick="event.stopPropagation();setThumb('f97',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — אי מטבח</div><div class="prod-name">F97</div><div class="prod-specs-preview">מידות: 60 / 90 ס"מ · צבעים: נירוסטה</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('f54')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-f54" src="https://airforcespa.it/wp-content/uploads/F54-BK-Scontornata_COPERTINA_pp-1-1920x1324.jpg" alt="F54" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=F54&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/F54-BK-Scontornata_COPERTINA_pp-1-1920x1324.jpg" onclick="event.stopPropagation();setThumb('f54',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F54-S4-full-BK-1920x1280.jpg" onclick="event.stopPropagation();setThumb('f54',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F54-S4-IX-comBK-1920x1280.jpg" onclick="event.stopPropagation();setThumb('f54',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — אי מטבח</div><div class="prod-name">F54</div><div class="prod-specs-preview">מידות: 90 ס"מ · צבעים: נירוסטה / שחור</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+
+<div class="product-card" onclick="openModal('new-moon-r')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-nmr" src="https://airforcespa.it/wp-content/uploads/NewMoon-Restyling-BK_pp-1920x1337.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=NEW+MOON+R'" alt="NEW MOON R"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/NewMoon-Restyling-BK_pp-1920x1337.jpg" onclick="event.stopPropagation();setThumb('nmr',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/NewMoon-Amb-BK-1920x1080.jpg" onclick="event.stopPropagation();setThumb('nmr',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/NewMoon-Amb-Pearl-1920x1080.jpg" onclick="event.stopPropagation();setThumb('nmr',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — אי מטבח</div><div class="prod-name">NEW MOON R</div><div class="prod-specs-preview">מידות: 45 ס"מ · צבעים: שחור / לבן / לבן מבריק</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('luna-r')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-lun" src="https://airforcespa.it/wp-content/uploads/Luna-BK-ambiente-NuovoFondo_pp-1920x1221.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=LUNA+R'" alt="LUNA R"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Luna-BK-ambiente-NuovoFondo_pp-1920x1221.jpg" onclick="event.stopPropagation();setThumb('lun',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Luna-Amb-Pearl-1920x1080.jpg" onclick="event.stopPropagation();setThumb('lun',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Luna-Amb-White-1920x1080.jpg" onclick="event.stopPropagation();setThumb('lun',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — אי מטבח</div><div class="prod-name">LUNA R</div><div class="prod-specs-preview">מידות: 45 ס"מ · צבעים: שחור / לבן / לבן מבריק</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('ballerina-crisalide')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-bcr" src="https://airforcespa.it/wp-content/uploads/BallerinaAmbienteNera_pp-1-1920x1147.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=BALLERINA+CRISALIDE'" alt="BALLERINA CRISALIDE"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/BallerinaAmbienteNera_pp-1-1920x1147.jpg" onclick="event.stopPropagation();setThumb('bcr',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/BallerinaAmbienteBiancaLOGO-1920x1920.jpg" onclick="event.stopPropagation();setThumb('bcr',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/BallerinaParticolare-Nera-1920x1920.jpg" onclick="event.stopPropagation();setThumb('bcr',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — אי מטבח</div><div class="prod-name">BALLERINA CRISALIDE</div><div class="prod-specs-preview">מידות: 47.5 ס"מ · צבעים: שחור / לבן</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+</div></div>
+
+<!-- קולטי קיר -->
+<div id="cat-wall" class="products-section"><div class="products-grid">
+
+<div class="product-card" onclick="openModal('vis-head-free')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-vhf" src="https://airforcespa.it/wp-content/uploads/Vis-HeadFree2024COPERTINA_.jpg" alt="VIS HEAD FREE" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=VIS+HEAD+FREE&font=playfair-display'">
+    <div class="prod-thumb-strip">
+      <img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Vis-HeadFree2024COPERTINA_.jpg" onclick="event.stopPropagation();setThumb('vhf',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Vis-HeadFree2024-con-camino-1-1320x1920.jpg" onclick="event.stopPropagation();setThumb('vhf',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Vis-HeadFree2024-particolare-IX-1320x1920.jpg" onclick="event.stopPropagation();setThumb('vhf',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/ProVerticale-ambiente-1-1920x1080.jpg" onclick="event.stopPropagation();setThumb('vhf',this.src,this)" alt="">
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — קיר</div>
+    <div class="prod-name">VIS HEAD FREE NO DROP</div>
+    <div class="prod-specs-preview">מידות: 90/120 ס"מ</div>
+    <span class="prod-link">פרטים מלאים + גלריה ←</span>
+  </div>
+</div>
+
+<div class="product-card" onclick="openModal('v8-inox')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-v8" src="https://airforcespa.it/wp-content/uploads/V8-inox_COPERTINA_pp-1-1920x1456.jpg" alt="V8 INOX" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=V8+INOX&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/V8-inox_COPERTINA_pp-1-1920x1456.jpg" onclick="event.stopPropagation();setThumb('v8',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/V8-1-1920x1280.jpg" onclick="event.stopPropagation();setThumb('v8',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/V8_dettaglio_2-1-1920x1280.jpg" onclick="event.stopPropagation();setThumb('v8',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — קיר</div>
+    <div class="prod-name">V8 INOX</div>
+    <div class="prod-specs-preview">מידות: 60/90 ס"מ · צבעים: נירוסטה</div>
+    <span class="prod-link">פרטים מלאים ←</span>
+  </div>
+</div>
+
+<div class="product-card" onclick="openModal('q-bic-wall')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-qbw" src="https://airforcespa.it/wp-content/uploads/Q-Bic-PerspView_COPERTINA_-1-1920x1684.jpg" alt="Q-BIC WALL" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=Q-BIC+WALL&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Q-Bic-PerspView_COPERTINA_-1-1920x1684.jpg" onclick="event.stopPropagation();setThumb('qbw',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Q-BIC-Frontale-1-1920x1080.jpg" onclick="event.stopPropagation();setThumb('qbw',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Q-BIC-Particolare-1920x1080.jpg" onclick="event.stopPropagation();setThumb('qbw',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — קיר</div>
+    <div class="prod-name">Q-BIC WALL</div>
+    <div class="prod-specs-preview">מידות: 90/120 ס"מ</div>
+    <span class="prod-link">פרטים מלאים ←</span>
+  </div>
+</div>
+
+<div class="product-card" onclick="openModal('foehn')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-foe" src="https://airforcespa.it/wp-content/uploads/Foehn_COPERTINA_pp-1-1920x1132.jpg" alt="FOEHN" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=FOEHN&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Foehn_COPERTINA_pp-1-1920x1132.jpg" onclick="event.stopPropagation();setThumb('foe',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Foehn-Ambiente-1920x1200.jpg" onclick="event.stopPropagation();setThumb('foe',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Foehn-Aperta-1920x1200.jpg" onclick="event.stopPropagation();setThumb('foe',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — קיר</div>
+    <div class="prod-name">FOEHN</div>
+    <div class="prod-specs-preview">מידות: 60/90 ס"מ · צבעים: שחור</div>
+    <span class="prod-link">פרטים מלאים ←</span>
+  </div>
+</div>
+
+<div class="product-card" onclick="openModal('omega')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-omg" src="https://airforcespa.it/wp-content/uploads/Omega-80-BK-PerspViewNocamino-2-1920x1529.jpg" alt="OMEGA" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=OMEGA&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Omega-80-BK-PerspViewNocamino-2-1920x1529.jpg" onclick="event.stopPropagation();setThumb('omg',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Omega-60-BK-PerspViewNocamino-1391x1920.jpg" onclick="event.stopPropagation();setThumb('omg',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Omega-80-BK-PerspView-2.jpg" onclick="event.stopPropagation();setThumb('omg',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — קיר</div>
+    <div class="prod-name">OMEGA</div>
+    <div class="prod-specs-preview">מידות: 60/80/90 ס"מ</div>
+    <span class="prod-link">פרטים מלאים ←</span>
+  </div>
+</div>
+
+<div class="product-card" onclick="openModal('clio')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-cli" src="https://airforcespa.it/wp-content/uploads/Clio-PerspView-NoCamino-2-1920x1818.jpg" alt="CLIO" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=CLIO&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Clio-PerspView-NoCamino-2-1920x1818.jpg" onclick="event.stopPropagation();setThumb('cli',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Clio-AmbPerspView-1920x1320.jpg" onclick="event.stopPropagation();setThumb('cli',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Clio-PerspView-1391x1920.jpg" onclick="event.stopPropagation();setThumb('cli',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — קיר</div>
+    <div class="prod-name">CLIO</div>
+    <div class="prod-specs-preview">מידות: 60/80 ס"מ</div>
+    <span class="prod-link">פרטים מלאים ←</span>
+  </div>
+</div>
+
+<div class="product-card" onclick="openModal('alpha')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-alp" src="https://airforcespa.it/wp-content/uploads/Alpha-Ambiente-6-1920x1513.jpg" alt="ALPHA" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=ALPHA&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Alpha-Ambiente-6-1920x1513.jpg" onclick="event.stopPropagation();setThumb('alp',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Alpha-Ambiente-2-1320x1920.jpg" onclick="event.stopPropagation();setThumb('alp',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Alpha-60-FrontView-2-1920x1080.jpg" onclick="event.stopPropagation();setThumb('alp',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — קיר</div>
+    <div class="prod-name">ALPHA</div>
+    <div class="prod-specs-preview">מידות: 50/60/80/90 ס"מ</div>
+    <span class="prod-link">פרטים מלאים ←</span>
+  </div>
+</div>
+
+<div class="product-card" onclick="openModal('vis-boxy-wall')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-vbw" src="https://airforcespa.it/wp-content/uploads/Vis-Boxy-Scontornata-1920x1080.jpg" alt="VIS BOXY WALL" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=VIS+BOXY+WALL&font=playfair-display'">
+    <div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Vis-Boxy-Scontornata-1920x1080.jpg" onclick="event.stopPropagation();setThumb('vbw',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/VIS-wall-Test-A-1920x1080.jpg" onclick="event.stopPropagation();setThumb('vbw',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/ProBOX-ambiente-1920x1080.jpg" onclick="event.stopPropagation();setThumb('vbw',this.src,this)" alt=""></div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-cat">קולט אדים — קיר</div>
+    <div class="prod-name">VIS BOXY WALL</div>
+    <div class="prod-specs-preview">מידות: 120 ס"מ נירוסטה/שחור מט | 180 ס"מ</div>
+    <span class="prod-link">פרטים מלאים ←</span>
+  </div>
+</div>
+
+
+<div class="product-card" onclick="openModal('f177-v8')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-f177" src="https://airforcespa.it/wp-content/uploads/V8_dettaglio-1-1920x1280.jpg" alt="F177 V8" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=F177+V8&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/V8_dettaglio-1-1920x1280.jpg" onclick="event.stopPropagation();setThumb('f177',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Vitamina-V8-Schmidt-inox-1-1920x1440.jpg" onclick="event.stopPropagation();setThumb('f177',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — קיר</div><div class="prod-name">F177 V8</div><div class="prod-specs-preview">מידות: 60/90 ס"מ · צבעים: נירוסטה</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('vis-boxy-nodrop-wall')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-vbn" src="https://airforcespa.it/wp-content/uploads/VIS-Boxy-testC-1920x1080.jpg" alt="VIS BOXY NO DROP WALL" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=VIS+BOXY+NO+DROP+WALL&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/VIS-Boxy-testC-1920x1080.jpg" onclick="event.stopPropagation();setThumb('vbn',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/ProBOX-IX-ambiente-1920x1080.jpg" onclick="event.stopPropagation();setThumb('vbn',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — קיר</div><div class="prod-name">VIS BOXY NO DROP</div><div class="prod-specs-preview">מידות: 120 ס"מ נירוסטה/שחור מט | 180 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('foehn-nodrop')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-fnd" src="https://airforcespa.it/wp-content/uploads/Foehn-Aperta-Accesa-1920x1200.jpg" alt="FOEHN NO DROP" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=FOEHN+NO+DROP&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Foehn-Aperta-Accesa-1920x1200.jpg" onclick="event.stopPropagation();setThumb('fnd',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Foehn_COPERTINA_pp-1-1920x1132.jpg" onclick="event.stopPropagation();setThumb('fnd',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — קיר</div><div class="prod-name">FOEHN NO DROP</div><div class="prod-specs-preview">מידות: 60/90 ס"מ · צבעים: שחור</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('f203')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-f203" src="https://airforcespa.it/wp-content/uploads/F203_copertina-1920x1387.jpg" alt="F203" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=F203&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/F203_copertina-1920x1387.jpg" onclick="event.stopPropagation();setThumb('f203',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F203_Ambiente-1-1920x1080.jpg" onclick="event.stopPropagation();setThumb('f203',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F203_Ambiente-WH-WH-1920x1080.jpg" onclick="event.stopPropagation();setThumb('f203',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — קיר</div><div class="prod-name">F203</div><div class="prod-specs-preview">מידות: 60/80/90 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('f212')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-f212" src="https://airforcespa.it/wp-content/uploads/F212_COPERTINA_pp-1-1920x1211.jpg" alt="F212" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=F212&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/F212_COPERTINA_pp-1-1920x1211.jpg" onclick="event.stopPropagation();setThumb('f212',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F212-60-ambiente-Schmidt-1-1920x1920.jpg" onclick="event.stopPropagation();setThumb('f212',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F212_90-ecowall-1-1920x1440.jpg" onclick="event.stopPropagation();setThumb('f212',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — קיר</div><div class="prod-name">F212</div><div class="prod-specs-preview">מידות: 60/80/90 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('b-ox')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-box" src="https://airforcespa.it/wp-content/uploads/B-OX-Schueller-4-1920x1080.jpg" alt="B-OX" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=B-OX&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/B-OX-Schueller-4-1920x1080.jpg" onclick="event.stopPropagation();setThumb('box',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/B-OX-Particolare-TSE-new-1920x1080.jpg" onclick="event.stopPropagation();setThumb('box',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/B-OX-Ambiente-TSE-new-1920x1080.jpg" onclick="event.stopPropagation();setThumb('box',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — קיר</div><div class="prod-name">B-OX</div><div class="prod-specs-preview">מידות: 60/90 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('f-205')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-f205" src="https://airforcespa.it/wp-content/uploads/F205-ambiente-INOX_COPERTINApp-1-1920x1553.jpg" alt="F-205" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=F-205&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/F205-ambiente-INOX_COPERTINApp-1-1920x1553.jpg" onclick="event.stopPropagation();setThumb('f205',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F205-particolare-INOX-1920x1080.jpg" onclick="event.stopPropagation();setThumb('f205',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F205-ambiente-INOX-Bianco-1920x1080.jpg" onclick="event.stopPropagation();setThumb('f205',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — קיר</div><div class="prod-name">F-205</div><div class="prod-specs-preview">מידות: 60/90 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('f53-d2')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-f53d2" src="https://airforcespa.it/wp-content/uploads/F53-D2_copertina.jpg" alt="F53 D2" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=F53+D2&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/F53-D2_copertina.jpg" onclick="event.stopPropagation();setThumb('f53d2',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F53-D2-ambientata-1920x1278.jpg" onclick="event.stopPropagation();setThumb('f53d2',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — קיר</div><div class="prod-name">F53 D2</div><div class="prod-specs-preview">מידות: 60/90 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('f53-s4')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-f53s4" src="https://airforcespa.it/wp-content/uploads/F53_S4_copertina-1920x1168.jpg" alt="F53 S4" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=F53+S4&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/F53_S4_copertina-1920x1168.jpg" onclick="event.stopPropagation();setThumb('f53s4',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F53-IX-S4-Foster-1-1920x1080.jpg" onclick="event.stopPropagation();setThumb('f53s4',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F53-BK-S4-full-BK-1-1920x1080.jpg" onclick="event.stopPropagation();setThumb('f53s4',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — קיר</div><div class="prod-name">F53 S4</div><div class="prod-specs-preview">מידות: 60/90 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('f0-s4')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-f0s4" src="https://airforcespa.it/wp-content/uploads/F0_S4_copertina-1920x1610.jpg" alt="F0 S4" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=F0+S4&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/F0_S4_copertina-1920x1610.jpg" onclick="event.stopPropagation();setThumb('f0s4',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F0-S4-60-1920x1278.jpg" onclick="event.stopPropagation();setThumb('f0s4',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F0_S4_90_flat-1920x1278.jpg" onclick="event.stopPropagation();setThumb('f0s4',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — קיר</div><div class="prod-name">F0 S4</div><div class="prod-specs-preview">מידות: 60/90 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('f0-d2')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-f0d2" src="https://airforcespa.it/wp-content/uploads/F0_D2_ambiente-3.jpg" alt="F0 D2" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=F0+D2&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/F0_D2_ambiente-3.jpg" onclick="event.stopPropagation();setThumb('f0d2',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F0-60_D2_NERA-1920x1440.jpg" onclick="event.stopPropagation();setThumb('f0d2',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F0_D2_ambiente-5-1920x1278.jpg" onclick="event.stopPropagation();setThumb('f0d2',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — קיר</div><div class="prod-name">F0 D2</div><div class="prod-specs-preview">מידות: 60/90 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+
+<div class="product-card" onclick="openModal('iconic')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-ico" src="https://airforcespa.it/wp-content/uploads/Iconic_senza-caminio_COPERTINA_pp-1-1920x1906.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=ICONIC'" alt="ICONIC"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Iconic_senza-caminio_COPERTINA_pp-1-1920x1906.jpg" onclick="event.stopPropagation();setThumb('ico',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Iconic-ambiente-rev2-1920x1280.jpg" onclick="event.stopPropagation();setThumb('ico',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Iconic-particolare-1920x1280.jpg" onclick="event.stopPropagation();setThumb('ico',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — קיר</div><div class="prod-name">ICONIC</div><div class="prod-specs-preview">מידות: 80 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('shape')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-shp2" src="https://airforcespa.it/wp-content/uploads/Air_fondo_SHAPE_NERA_HD_pp-1854x1920.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=SHAPE'" alt="SHAPE"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Air_fondo_SHAPE_NERA_HD_pp-1854x1920.jpg" onclick="event.stopPropagation();setThumb('shp2',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Shape-IX-PerspView_pp-1920x1818.jpg" onclick="event.stopPropagation();setThumb('shp2',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — קיר</div><div class="prod-name">SHAPE</div><div class="prod-specs-preview">מידות: 60/90/120 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('f205')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-f205b" src="https://airforcespa.it/wp-content/uploads/F205-60-Scontornata-1920x1440.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=F205'" alt="F205"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/F205-60-Scontornata-1920x1440.jpg" onclick="event.stopPropagation();setThumb('f205b',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F205-ambiente-INOX-1920x1080.jpg" onclick="event.stopPropagation();setThumb('f205b',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט אדים — קיר</div><div class="prod-name">F205</div><div class="prod-specs-preview">מידות: 60/90 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+</div></div>
+
+<!-- קולטים מובנים -->
+<div id="cat-ceiling" class="products-section"><div class="products-grid">
+<div class="product-card" onclick="openModal('easy-up')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-eu" src="https://airforcespa.it/wp-content/uploads/Air_Force_Silhouette_Easy_Up_Estetica_HD_COPERTINA_pp-1920x1728.jpg" alt="SILHOUETTE EASY UP FLAT" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=EASY+UP&font=playfair-display'">
+    <div class="prod-thumb-strip">
+      <img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Air_Force_Silhouette_Easy_Up_Estetica_HD_COPERTINA_pp-1920x1728.jpg" onclick="event.stopPropagation();setThumb('eu',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Silhouette-IX-Ambiente-1-1920x1080.jpg" onclick="event.stopPropagation();setThumb('eu',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Silhouette-aperta-IX-1920x1080.jpg" onclick="event.stopPropagation();setThumb('eu',this.src,this)" alt="">
+    </div>
+  </div>
+  <div class="prod-info"><div class="prod-cat">קולט תקרה</div><div class="prod-name">SILHOUETTE EASY UP FLAT</div><div class="prod-specs-preview">מידות: 100 ס"מ</div><span class="prod-link">פרטים מלאים + גלריה ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('easy-fit')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-ef" src="https://airforcespa.it/wp-content/uploads/Air_Force_Easy_Fit_Silhouette_Estetica_HD_COPERTINA_pp-1-1920x1728.jpg" alt="SILHOUETTE EASY FIT" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=EASY+FIT&font=playfair-display'">
+    <div class="prod-thumb-strip">
+      <img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Air_Force_Easy_Fit_Silhouette_Estetica_HD_COPERTINA_pp-1-1920x1728.jpg" onclick="event.stopPropagation();setThumb('ef',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Air_Force_Easy_Fit_Silhouette_Vert_Screen_HD_pp-1-1380x1920.jpg" onclick="event.stopPropagation();setThumb('ef',this.src,this)" alt="">
+    </div>
+  </div>
+  <div class="prod-info"><div class="prod-cat">קולט תקרה</div><div class="prod-name">SILHOUETTE EASY FIT</div><div class="prod-specs-preview">מידות: 100 ס"מ</div><span class="prod-link">פרטים מלאים + גלריה ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('compact-up')">
+  <div class="prod-img-wrap">
+    <img class="prod-img-main" id="tm-cu" src="https://airforcespa.it/wp-content/uploads/Air_Force_Built_Inn_Compact_Up_Det_HD_COPERTINA_pp-1920x1152.jpg" alt="COMPACT UP" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=COMPACT+UP&font=playfair-display'">
+    <div class="prod-thumb-strip">
+      <img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Air_Force_Built_Inn_Compact_Up_Det_HD_COPERTINA_pp-1920x1152.jpg" onclick="event.stopPropagation();setThumb('cu',this.src,this)" alt="">
+      <img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Air_Force_Built_Inn_Compact_Up_Vert_HD_pp-1-1320x1920.jpg" onclick="event.stopPropagation();setThumb('cu',this.src,this)" alt="">
+    </div>
+  </div>
+  <div class="prod-info"><div class="prod-cat">קולט תקרה</div><div class="prod-name">COMPACT UP</div><div class="prod-specs-preview">מידות: 83 ס"מ</div><span class="prod-link">פרטים מלאים + גלריה ←</span></div>
+</div>
+</div></div>
+
+<!-- קולטים מובנים (Built-in) -->
+<div id="cat-builtin" class="products-section"><div class="products-grid">
+<div class="product-card" onclick="openModal('incasso-pro')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-incp" src="https://airforcespa.it/wp-content/uploads/Incasso-Pro-1.jpg" alt="INCASSO PRO NO DROP"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Incasso-Pro-1.jpg" onclick="event.stopPropagation();setThumb('incp',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/IncassoPro_Particolare-2-1320x1920.jpg" onclick="event.stopPropagation();setThumb('incp',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/IncassoProfessionale-Ambiente-5-1920x1280.jpg" onclick="event.stopPropagation();setThumb('incp',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט מובנה — ללא טפטוף</div><div class="prod-name">INCASSO PRO NO DROP</div><div class="prod-specs-preview">מידות: 52–100 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('f300-nodrop')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-f300nd" src="https://airforcespa.it/wp-content/uploads/F300-RLN-BK-NoDrop-AmbView-1-1920x1280.jpg" alt="F300 NO DROP"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/F300-RLN-BK-NoDrop-AmbView-1-1920x1280.jpg" onclick="event.stopPropagation();setThumb('f300nd',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F300-NoDrop-IX-Ambiente-2023-1920x1372.jpg" onclick="event.stopPropagation();setThumb('f300nd',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F300-NoDrop-IX-Particolare-1920x987.jpg" onclick="event.stopPropagation();setThumb('f300nd',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט מובנה — ללא טפטוף</div><div class="prod-name">F300 NO DROP</div><div class="prod-specs-preview">מידות: 60–120 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('f300')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-f300" src="https://airforcespa.it/wp-content/uploads/F300-RLN-LowPerspView-2048x1365-1-1920x1280.jpg" alt="F300"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/F300-RLN-LowPerspView-2048x1365-1-1920x1280.jpg" onclick="event.stopPropagation();setThumb('f300',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F300-RLN-BK-AmbView-1-1920x1280.jpg" onclick="event.stopPropagation();setThumb('f300',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/F300-BK-Ambiente-1-1920x1280.jpg" onclick="event.stopPropagation();setThumb('f300',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט מובנה</div><div class="prod-name">F300</div><div class="prod-specs-preview">מידות: 60–120 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('compact-in')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-compin" src="https://airforcespa.it/wp-content/uploads/Air_Force_Built_Inn_Compact_Det_HD_pp-5-1920x1152.jpg" alt="COMPACT IN"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Air_Force_Built_Inn_Compact_Det_HD_pp-5-1920x1152.jpg" onclick="event.stopPropagation();setThumb('compin',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Air_Force_Built_Inn_Compact_Vert_HD_pp-copia-1320x1920.jpg" onclick="event.stopPropagation();setThumb('compin',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט מובנה</div><div class="prod-name">COMPACT IN</div><div class="prod-specs-preview">מידות: 53/83 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('modulo-plus')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-modp" src="https://airforcespa.it/wp-content/uploads/Modulo-Plus-BK_COPERTINA-1920x1080.jpg" alt="MODULO PLUS"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Modulo-Plus-BK_COPERTINA-1920x1080.jpg" onclick="event.stopPropagation();setThumb('modp',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Modulo-Plus-Ambiente-IX-1920x1593.jpg" onclick="event.stopPropagation();setThumb('modp',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Modulo-Plus-Ambiente-BK-Rev2-1920x1593.jpg" onclick="event.stopPropagation();setThumb('modp',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט מובנה</div><div class="prod-name">MODULO PLUS</div><div class="prod-specs-preview">מידות: 52/72 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('modulo-pop')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-modpop" src="https://airforcespa.it/wp-content/uploads/Modulo-POP_COPERTINA-1-1920x987.jpg" alt="MODULO POP"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Modulo-POP_COPERTINA-1-1920x987.jpg" onclick="event.stopPropagation();setThumb('modpop',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Modulo-POP-72-Ambiente-1334x1920.jpg" onclick="event.stopPropagation();setThumb('modpop',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Modulo-POP-52-Ambiente-1334x1920.jpg" onclick="event.stopPropagation();setThumb('modpop',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט מובנה</div><div class="prod-name">MODULO POP</div><div class="prod-specs-preview">מידות: 52/72 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('slide-evo')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-slevo" src="https://airforcespa.it/wp-content/uploads/Slide-Evo-IX-90-PerspView-1920x1920.jpg" alt="SLIDE EVO"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Slide-Evo-IX-90-PerspView-1920x1920.jpg" onclick="event.stopPropagation();setThumb('slevo',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Slide-Evo-IX-60-PerspView-1920x1920.jpg" onclick="event.stopPropagation();setThumb('slevo',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט מובנה</div><div class="prod-name">SLIDE EVO</div><div class="prod-specs-preview">מידות: 60/90 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('slide')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-slide" src="https://airforcespa.it/wp-content/uploads/Slide-IX-90-PerspView-1920x1920.jpg" alt="SLIDE"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Slide-IX-90-PerspView-1920x1920.jpg" onclick="event.stopPropagation();setThumb('slide',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Slide-IX-60-PerspView-1920x1920.jpg" onclick="event.stopPropagation();setThumb('slide',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט מובנה</div><div class="prod-name">SLIDE</div><div class="prod-specs-preview">מידות: 60/90 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('invisia')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-invisia" src="https://airforcespa.it/wp-content/uploads/Invisia-IX-72-PerspView-1920x1010.jpg" alt="INVISIA"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Invisia-IX-72-PerspView-1920x1010.jpg" onclick="event.stopPropagation();setThumb('invisia',this.src,this)" alt=""><img class="prod-thumb" src="https://airforcespa.it/wp-content/uploads/Invisia-IX-52-PerspView-1920x1202.jpg" onclick="event.stopPropagation();setThumb('invisia',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">קולט מובנה</div><div class="prod-name">INVISIA</div><div class="prod-specs-preview">מידות: 52/72 ס"מ</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+</div></div>
+
+<!-- כיריים -->
+<div id="cat-cooktops" class="products-section"><div class="products-grid">
+<div class="product-card" onclick="openModal('prima-80')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-p80" src="https://airforcespa.it/wp-content/uploads/PRIMA-80-4-B-FrontView-1920x1731.jpg" alt="PRIMA 80" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=PRIMA+80&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/PRIMA-80-4-B-FrontView-1920x1731.jpg" onclick="event.stopPropagation();setThumb('p80',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">כירייה — אינדוקציה</div><div class="prod-name">PRIMA 80 4Z 1B</div><div class="prod-specs-preview">רוחב: 78 ס"מ · 4 מבערים · 7.2 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('pop-60-4z')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-p60" src="https://airforcespa.it/wp-content/uploads/POP-60-4Z_pp_1-1-1920x1731.jpg" alt="POP 60 4Z" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=POP+60+4Z&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/POP-60-4Z_pp_1-1-1920x1731.jpg" onclick="event.stopPropagation();setThumb('p60',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">כירייה — אינדוקציה</div><div class="prod-name">POP 60 4Z</div><div class="prod-specs-preview">רוחב: 59 ס"מ · 4 מבערים · 6.2 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('pop-60-3z')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-p63" src="https://airforcespa.it/wp-content/uploads/POP-60_3Z_pp-2-1920x1731.jpg" alt="POP 60 3Z" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=POP+60+3Z&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/POP-60_3Z_pp-2-1920x1731.jpg" onclick="event.stopPropagation();setThumb('p63',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">כירייה — אינדוקציה</div><div class="prod-name">POP 60 3Z</div><div class="prod-specs-preview">רוחב: 59 ס"מ · 3 מבערים · 5.2 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('pop-80')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-p8z" src="https://airforcespa.it/wp-content/uploads/POP-80-4_pp-3-1920x1731.jpg" alt="POP 80" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=POP+80&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/POP-80-4_pp-3-1920x1731.jpg" onclick="event.stopPropagation();setThumb('p8z',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">כירייה — אינדוקציה</div><div class="prod-name">POP 80 4Z</div><div class="prod-specs-preview">רוחב: 78 ס"מ · 4 מבערים · 7.2 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('90-plus')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-90p" src="https://airforcespa.it/wp-content/uploads/90-PLUS_pp-3-1920x1731.jpg" alt="90 PLUS" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=90+PLUS&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/90-PLUS_pp-3-1920x1731.jpg" onclick="event.stopPropagation();setThumb('90p',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">כירייה — אינדוקציה</div><div class="prod-name">90 PLUS</div><div class="prod-specs-preview">רוחב: 88 ס"מ · 5 מבערים · 7.4 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('domino-30')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-dom" src="https://airforcespa.it/wp-content/uploads/Domino-POP-30_pp-2-1920x1731.jpg" alt="DOMINO" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=DOMINO&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Domino-POP-30_pp-2-1920x1731.jpg" onclick="event.stopPropagation();setThumb('dom',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">כירייה — דומינו מודולרי</div><div class="prod-name">DOMINO POP 30</div><div class="prod-specs-preview">רוחב: 29 ס"מ · 2 מבערים · 3.2 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('easy-90')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-e90" src="https://airforcespa.it/wp-content/uploads/EASY_90_pp-5-1920x1731.jpg" alt="EASY 90" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=EASY+90&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/EASY_90_pp-5-1920x1731.jpg" onclick="event.stopPropagation();setThumb('e90',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">כירייה — אינדוקציה</div><div class="prod-name">EASY 90</div><div class="prod-specs-preview">רוחב: 88 ס"מ · 5 מבערים · 7.4 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('teppanyaki')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-tep" src="https://airforcespa.it/wp-content/uploads/TeppanYaki-38_pp-2-1920x1731.jpg" alt="TEPPAN YAKI" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=TEPPAN+YAKI&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/TeppanYaki-38_pp-2-1920x1731.jpg" onclick="event.stopPropagation();setThumb('tep',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">לוח טפן יאקי</div><div class="prod-name">TEPPAN YAKI 38</div><div class="prod-specs-preview">ברזל יצוק &nbsp;·&nbsp; 38 ס"מ &nbsp;·&nbsp; בישול אסייתי</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="product-card" onclick="openModal('easy-60')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-e60" src="https://airforcespa.it/wp-content/uploads/POP-60-4Z_pp_1-1-1920x1731.jpg" alt="EASY 60" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=EASY+60&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/POP-60-4Z_pp_1-1-1920x1731.jpg" onclick="event.stopPropagation();setThumb('e60',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">כירייה — אינדוקציה</div><div class="prod-name">EASY 60</div><div class="prod-specs-preview">רוחב: 59 ס"מ · 4 מבערים · 6.2 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('prima-domino-30')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-pd30" src="https://airforcespa.it/wp-content/uploads/Domino-POP-30_pp-2-1920x1731.jpg" alt="PRIMA DOMINO 30" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=PRIMA+DOMINO+30&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/Domino-POP-30_pp-2-1920x1731.jpg" onclick="event.stopPropagation();setThumb('pd30',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">כירייה — דומינו</div><div class="prod-name">PRIMA DOMINO 30</div><div class="prod-specs-preview">רוחב: 29 ס"מ · 2 מבערים · 3.2 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('prima-60-3')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-p603" src="https://airforcespa.it/wp-content/uploads/POP-60_3Z_pp-2-1920x1731.jpg" alt="PRIMA 60-3" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=PRIMA+60-3&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/POP-60_3Z_pp-2-1920x1731.jpg" onclick="event.stopPropagation();setThumb('p603',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">כירייה — אינדוקציה</div><div class="prod-name">PRIMA 60-3</div><div class="prod-specs-preview">רוחב: 59 ס"מ · 3 מבערים · 5.2 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('easy-90-p')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-e90p" src="https://airforcespa.it/wp-content/uploads/EASY_90_pp-5-1920x1731.jpg" alt="EASY 90 P" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=EASY+90+P&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/EASY_90_pp-5-1920x1731.jpg" onclick="event.stopPropagation();setThumb('e90p',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">כירייה — אינדוקציה</div><div class="prod-name">EASY 90 P</div><div class="prod-specs-preview">רוחב: 88 ס"מ · 5 מבערים · 7.4 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('teppanyaki-58')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-tep58" src="https://airforcespa.it/wp-content/uploads/TeppanYaki-38_pp-2-1920x1731.jpg" alt="TEPPANYAKI 58" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=TEPPANYAKI+58&font=playfair-display'"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/TeppanYaki-38_pp-2-1920x1731.jpg" onclick="event.stopPropagation();setThumb('tep58',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">לוח טפן יאקי</div><div class="prod-name">TEPPANYAKI 58</div><div class="prod-specs-preview">ברזל יצוק &nbsp;·&nbsp; 58 ס"מ &nbsp;·&nbsp; גדול</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+
+<div class="product-card" onclick="openModal('prima-60-4z')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-p64" src="https://airforcespa.it/wp-content/uploads/POP-60-4Z_pp_1-1-1920x1731.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=PRIMA+60-4Z'" alt="PRIMA 60-4Z 1B"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/PRIMA-60-4Z_pp-1-1920x1731.jpg" onclick="event.stopPropagation();setThumb('p64',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">כירייה — אינדוקציה</div><div class="prod-name">PRIMA 60-4Z 1B</div><div class="prod-specs-preview">רוחב: 59 ס"מ · 4 מבערים · 7.2 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('prima-80-4z')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-p84" src="https://airforcespa.it/wp-content/uploads/PRIMA-80-4-B-FrontView-1920x1731.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=PRIMA+80-4Z'" alt="PRIMA 80-4Z 1B"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/PRIMA-80-4-B-FrontView-1920x1731.jpg" onclick="event.stopPropagation();setThumb('p84',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">כירייה — אינדוקציה</div><div class="prod-name">PRIMA 80-4Z 1B</div><div class="prod-specs-preview">רוחב: 78 ס"מ · 4 מבערים · 7.2 kW &nbsp;·&nbsp; Touch</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="product-card" onclick="openModal('plus-90')">
+  <div class="prod-img-wrap"><img class="prod-img-main" id="tm-p90" src="https://airforcespa.it/wp-content/uploads/90-PLUS_pp-3-1920x1731.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f4f3f1/1c1c1e?text=PLUS+90'" alt="PLUS 90"><div class="prod-thumb-strip"><img class="prod-thumb active" src="https://airforcespa.it/wp-content/uploads/PLUS-90-5Z_pp-1920x1731.jpg" onclick="event.stopPropagation();setThumb('p90',this.src,this)" alt=""></div></div>
+  <div class="prod-info"><div class="prod-cat">כירייה — אינדוקציה</div><div class="prod-name">PLUS 90</div><div class="prod-specs-preview">רוחב: 90 ס"מ · 5 מבערים · 10.4 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+</div></div>
+
+<!-- כיריים משולבות קולט -->
+<div id="cat-innova" class="products-section"><div class="innova-grid">
+<div class="innova-card" onclick="openModal('innova-visio')">
+  <div class="innova-imgs"><img src="https://airforcespa.it/wp-content/uploads/Air_Force_Visio_PLUS_Vert_HD_QUADRATApp.jpg" alt=""><img src="https://airforcespa.it/wp-content/uploads/Air_Force_VISIOPLUS_ZEN_HD_pp-copia-1-1920x1397.jpg" alt=""></div>
+  <div class="innova-body"><div class="innova-tag">כירייה קולטת</div><div class="innova-name">INNOVA VISIO PLUS</div><div class="innova-specs">רוחב: 90 ס"מ · 4 מבערים · 7.4 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="innova-card" onclick="openModal('innova-slim')">
+  <div class="innova-imgs"><img src="https://airforcespa.it/wp-content/uploads/Air_Force_Slim_PLUS_Vert_HD_QUADRATA_pp.jpg" alt=""><img src="https://airforcespa.it/wp-content/uploads/Air_Force_Slim_PLUS_ZEN_HD_pp-5-1920x1397.jpg" alt=""></div>
+  <div class="innova-body"><div class="innova-tag">כירייה קולטת</div><div class="innova-name">INNOVA SLIM PLUS</div><div class="innova-specs">רוחב: 90 ס"מ · 4 מבערים · 7.4 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="innova-card" onclick="openModal('innova-artis')">
+  <div class="innova-imgs"><img src="https://airforcespa.it/wp-content/uploads/Artis-plus-1.jpg" alt=""><img src="https://airforcespa.it/wp-content/uploads/Air_Force_Artis_PLUS_Zen_HD_pp-2-1920x1397.jpg" alt=""></div>
+  <div class="innova-body"><div class="innova-tag">כירייה קולטת</div><div class="innova-name">INNOVA ARTIS PLUS</div><div class="innova-specs">רוחב: 80 ס"מ · 4 מבערים · 7.4 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+<div class="innova-card" onclick="openModal('innova-standard')">
+  <div class="innova-imgs"><img src="https://airforcespa.it/wp-content/uploads/Air_Force_Visio_PLUS_Vert_HD_QUADRATApp.jpg" alt=""><img src="https://airforcespa.it/wp-content/uploads/Air_Force_VISIOPLUS_ZEN_HD_pp-copia-1-1920x1397.jpg" alt=""></div>
+  <div class="innova-body"><div class="innova-tag">כירייה קולטת</div><div class="innova-name">INNOVA STANDARD</div><div class="innova-specs">רוחב: 90 ס"מ · 4 מבערים · 7.4 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="innova-card" onclick="openModal('innova-slim-80')">
+  <div class="innova-imgs">
+    <img src="https://airforcespa.it/wp-content/uploads/AIRFORCE_SLIM-80_Standard_aperta_Amb_hd_pp.jpg" alt="">
+    <img src="https://airforcespa.it/wp-content/uploads/AIRFORCE_SLIM-80_zen_Standard_hd_pp.jpg" alt="">
+  </div>
+  <div class="innova-body"><div class="innova-tag">כירייה קולטת</div><div class="innova-name">INNOVA SLIM 80</div><div class="innova-specs">רוחב: 80 ס"מ · 4 מבערים · 7.4 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="innova-card" onclick="openModal('innova-artis-prima')">
+  <div class="innova-imgs">
+    <img src="https://airforcespa.it/wp-content/uploads/Artis-prima-3.jpg" alt="">
+    <img src="https://airforcespa.it/wp-content/uploads/Air_Force_Artis_60_Prima_HD_pp-3-1920x1397.jpg" alt="">
+  </div>
+  <div class="innova-body"><div class="innova-tag">כירייה קולטת</div><div class="innova-name">INNOVA ARTIS PRIMA</div><div class="innova-specs">רוחב: 80 ס"מ · 4 מבערים · 7.2 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+<div class="innova-card" onclick="openModal('innova-artis-evo')">
+  <div class="innova-imgs">
+    <img src="https://airforcespa.it/wp-content/uploads/AIRFORCE_ARTIS-72-EVO_Amb_hd_pp-1320x1920.jpg" alt="">
+    <img src="https://airforcespa.it/wp-content/uploads/AIRFORCE_ARTIS-72-EVO_zen_hd_pp-1920x1397.jpg" alt="">
+  </div>
+  <div class="innova-body"><div class="innova-tag">כירייה קולטת</div><div class="innova-name">INNOVA ARTIS EVO 72</div><div class="innova-specs">רוחב: 72 ס"מ · 4 מבערים · 7.4 kW</div><span class="prod-link">פרטים מלאים ←</span></div>
+</div>
+
+</div></div>
+
+</div><!-- end wrapper -->
+
+<div class="gold-divider"></div>
+
+<div class="cta-band">
+  <div class="cta-bg"></div>
+  <div class="cta-content">
+    <div class="section-tag" style="margin-bottom:16px">AIRFORCE בישראל</div>
+    <h2>המטבח <em>החלומי</em><br>שלך מחכה</h2>
+    <p>ייעוץ חינם, הצעת מחיר אישית<br>והתקנה מקצועית עד הבית</p>
+    <a href="#contact" class="btn-gold">דברו איתנו עכשיו</a>
+  </div>
+</div>
+
+<section class="about-section" id="about">
+  <div class="about-img-wrap">
+    <img src="https://airforcespa.it/wp-content/uploads/Antares-PerspView-1920x1292.jpg" alt="AIRFORCE Italy">
+    <div class="about-badge"><strong>25+</strong><span>שנות ניסיון</span></div>
+  </div>
+  <div class="about-text">
+    <div class="section-tag">אודות AIRFORCE</div>
+    <h2>עיצוב <em>איטלקי</em><br>שמדבר בעד עצמו</h2>
+    <p>AIRFORCE נוסדה ב-1997 בפבריאנו שבאיטליה, וב-25 שנות פעילות הפכה לאחת החברות המובילות באירופה בתחום קולטי האדים והכיריים.</p>
+    <p>פרו דינמיק היא היבואן הבלעדי של AIRFORCE בישראל. אנו מביאים את מיטב הטכנולוגיה האיטלקית עם שירות מקומי מלא — ייעוץ, התקנה, אחריות ותמיכה.</p>
+    <div class="feat-list">
+      <div class="feat-item"><div class="feat-icon">⚡</div><div class="feat-text"><strong>ספיקה עד 850 מ"ק/ש</strong><span>ביצועים מרביים</span></div></div>
+      <div class="feat-icon-item feat-item"><div class="feat-icon">🔇</div><div class="feat-text"><strong>שקט כ-42 dB</strong><span>מהשקטים בקטגוריה</span></div></div>
+      <div class="feat-item"><div class="feat-icon">🌱</div><div class="feat-text"><strong>דירוג A++</strong><span>חסכון מרבי באנרגיה</span></div></div>
+      <div class="feat-item"><div class="feat-icon">🔧</div><div class="feat-text"><strong>שירות מלא</strong><span>טכנאים מוסמכים בכל הארץ</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<section class="contact-section" id="contact">
+  <div class="contact-info">
+    <div class="section-tag">יצירת קשר</div>
+    <h2>נשמח <em>לשמוע</em><br>מכם</h2>
+    <p>פרו דינמיק — היבואן הבלעדי של AIRFORCE בישראל. מוכרים ומתקינים בכל רחבי הארץ. שלחו מייל ונחזור אליכם תוך 24 שעות.</p>
+    <div class="contact-det">
+      <div class="det-icon">📞</div>
+      <div><div class="det-label">טלפון</div><div class="det-val"><a href="tel:0000000000" style="color:var(--ink);text-decoration:none">TODO: מספר טלפון</a></div></div>
+    </div>
+    <div class="contact-det">
+      <div class="det-icon">✉️</div>
+      <div>
+        <div class="det-label">אימייל</div>
+        <div class="det-val"><a href="mailto:infoairforce@gmail.com" style="color:var(--ink);text-decoration:none">infoairforce@gmail.com</a></div>
+      </div>
+    </div>
+    <div class="contact-det">
+      <div class="det-icon">📍</div>
+      <div><div class="det-label">כתובת</div><div class="det-val">הברזל 2, תל אביב</div></div>
+    </div>
+    <div class="contact-det">
+      <div class="det-icon">🕐</div>
+      <div><div class="det-label">שעות מענה</div><div class="det-val">א׳–ה׳ 09:00–18:00 &nbsp;|&nbsp; ו׳ 09:00–13:00</div></div>
+    </div>
+  </div>
+  <form class="contact-form" onsubmit="submitForm(event)">
+    <div class="form-row">
+      <div class="form-group"><label>שם פרטי</label><input type="text" placeholder="ישראל"></div>
+      <div class="form-group"><label>שם משפחה</label><input type="text" placeholder="ישראלי"></div>
+    </div>
+    <div class="form-group"><label>אימייל</label><input type="email" placeholder="example@gmail.com"></div>
+    <div class="form-group">
+      <label>מוצר מעניין</label>
+      <select>
+        <option>בחר מוצר...</option>
+        <option>קולטי אדים לאי מטבח</option>
+        <option>קולטי אדים לקיר</option>
+        <option>קולטי תקרה</option>
+        <option>כיריים אינדוקציה</option>
+        <option>כיריים משולבות קולט — Innova</option>
+        <option>ייעוץ כללי</option>
+      </select>
+    </div>
+    <div class="form-group"><label>הודעה</label><textarea placeholder="ספרו לנו על המטבח שלכם — גודל, סגנון, תקציב. נתאים לכם את הפתרון המושלם..."></textarea></div>
+    <button type="submit" class="btn-submit">שלח פנייה</button>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <img src="https://airforcespa.it/wp-content/uploads/airforcespa_logo.svg" class="footer-logo" alt="Airforce">
+      <p class="footer-about">פרו דינמיק — היבואן הבלעדי של AIRFORCE ITALY בישראל. מביאים לכם את הטוב ביותר בעיצוב ובטכנולוגיה האיטלקית.</p>
+      <div style="margin-top:20px;font-size:13px"><a href="tel:0000000000" style="color:#fff;text-decoration:none">📞 TODO: מספר טלפון</a></div>
+      <div style="margin-top:8px;font-size:13px"><a href="mailto:infoairforce@gmail.com" style="color:#fff;text-decoration:none">✉ infoairforce@gmail.com</a></div>
+      <div style="margin-top:8px;font-size:12px;color:rgba(255,255,255,0.4)">📍 הברזל 2, תל אביב</div>
+    </div>
+    <div class="footer-col">
+      <h4>קולטי אדים</h4>
+      <a href="#">קולטי אי מטבח</a>
+      <a href="#">קולטי קיר</a>
+      <a href="#">קולטים מובנים בארון</a>
+      <a href="#">קולטי תקרה</a>
+      <a href="#">קולט נשלף</a>
+    </div>
+    <div class="footer-col">
+      <h4>כיריים</h4>
+      <a href="#">כיריים אינדוקציה</a>
+      <a href="#">כיריים משולבות קולט</a>
+      <a href="#">טפן יאקי</a>
+      <a href="#">דומינו</a>
+    </div>
+    <div class="footer-col">
+      <h4>שירותים</h4>
+      <a href="#">ייעוץ חינם</a>
+      <a href="#">התקנה מקצועית</a>
+      <a href="#">אחריות ותמיכה</a>
+      <a href="#contact">צור קשר</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 פרו דינמיק — מייבאים ומפיצים את AIRFORCE בישראל. כל הזכויות שמורות.</span>
+    <span>AIRFORCE SPA, Italy</span>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModalOuter(event)">
+  <div class="modal" id="modalBox">
+    <button class="modal-close-btn" onclick="closeModal()">✕</button>
+    <div class="modal-top">
+      <div class="modal-gallery">
+        <img id="mMainImg" class="modal-main-img" src="" alt="">
+        <div class="modal-thumbs" id="mThumbs"></div>
+        <button class="modal-drawing-btn" id="mDrawingBtn" onclick="openDrawing()" style="display:none">📐 &nbsp; סרטוט מידות טכני — לחץ לפתיחה</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-cat" id="mCat"></div>
+        <div class="modal-name" id="mName"></div>
+        <div class="modal-tabs">
+          <button class="modal-tab active" onclick="switchTab('specs',this)">מפרטים טכניים</button>
+          <button class="modal-tab" onclick="switchTab('downloads',this)">הורדות PDF</button>
+        </div>
+        <div id="panel-specs" class="modal-panel active"><table class="specs-table" id="mSpecs"></table></div>
+        <div id="panel-downloads" class="modal-panel"><div class="downloads-list" id="mDownloads"></div></div>
+        <div style="margin-top:24px">
+          <a href="#contact" class="btn-gold" onclick="closeModal()" style="font-size:11px;letter-spacing:2px">בקש הצעת מחיר</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const PRODUCTS={
+  'vis-boxy-island':{name:'VIS BOXY ISLAND NO DROP',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/VIS-Island-Ambiente_pp-2-1920x1426.jpg','https://airforcespa.it/wp-content/uploads/VisBoxyIsland-120-IX-RawTest-1920x987.jpg','https://airforcespa.it/wp-content/uploads/VIS-Island-Particolare-1320x1920.jpg','https://airforcespa.it/wp-content/uploads/Vis-isola-120-1920x987.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AFLIVIS-1.pdf',specs:[['דגמים','120 ס"מ נירוסטה/שחור מט | 180 ס"מ'],['דירוג אנרגיה','A++'],['ספיקת אוויר','800 מ"ק/ש'],['רמת רעש','44 / 62 / 70 dB(A)'],['הספק','184.6 W'],['תאורה','2×4.8W Strip LED – 4000K'],['בקרה','רוטטיבית אלקטרונית'],['ממדים','120 / 180 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','No-Drop | Baffle נירוסטה']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/Vis-Boxy-Island-copia.pdf'},{n:'גיליון טכני 120',u:'https://airforcespa.it/wp-content/uploads/PFCCVISI120001.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCVISI120001.pdf'}]},
+  'antares':{name:'ANTARES',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/Antares-PerspView-1920x1292.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AIRFORCE-DISEGNI-TECNICI-SITO_ANTARES.svg',specs:[['דגמים','140 ס"מ שחור מט'],['דירוג אנרגיה','A'],['ספיקת אוויר','730 מ"ק/ש'],['רמת רעש','51 / 65 / 70 dB(A)'],['הספק','283 W'],['תאורה','2×9W Strip LED 4000K – 383 Lux'],['בקרה','Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','140×50 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['קוד מוצר','AF000061']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00046W.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/antares_product_fish_PFAF000061.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/energy_label_ELAF000061.pdf'}]},
+  'frame':{name:'FRAME',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/Frame_Schmidt_C_pp-1920x1440.jpg','https://airforcespa.it/wp-content/uploads/Frame-Ambiente-quadrato-1920x1920.jpg','https://airforcespa.it/wp-content/uploads/Frame-Particolare-B-1920x949.jpg','https://airforcespa.it/wp-content/uploads/Frame-portabicchieri-1920x1440.jpg','https://airforcespa.it/wp-content/uploads/Frame-PortaTablet-1920x1440.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AFLIFRAME-1.pdf',specs:[['דגמים','140 / 180 ס"מ — שחור מט'],['דירוג אנרגיה','140: A | 180: B'],['ספיקת אוויר','655 מ"ק/ש'],['רמת רעש','48 / 64 / 68 dB(A)'],['הספק','140: 229.6W | 180: 239.2W'],['תאורה','LED 4000K'],['בקרה','שלט רחוק + 4 מהירויות'],['אביזרים','מחזיק טאבלט, גביעים, ווים, מדף תבלינים'],['קודי מוצר','CCFRA140006 / CCFRA180001']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/X-frame-copia-1.pdf'},{n:'סרטוט מידות',u:'https://airforcespa.it/wp-content/uploads/AFLIFRAME-1.pdf'},{n:'גיליון טכני 140',u:'https://airforcespa.it/wp-content/uploads/PFCCFRA140006-1.pdf'}]},
+  'side':{name:'SIDE',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/Side-Frontale_pp-1920x1166.jpg','https://airforcespa.it/wp-content/uploads/Side-Apertura-1-1920x1365.jpg','https://airforcespa.it/wp-content/uploads/Side-Particolare-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/Side-ParticolareB-1920x1366.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AFLISIDECS.pdf',specs:[['דגמים','100 ס"מ שחור מט'],['ספיקת אוויר','490 מ"ק/ש'],['רמת רעש','63 / 69 / 71 dB(A)'],['הספק','258 W'],['תאורה','2×9W Strip LED – 460 Lux'],['בקרה','לוח אלקטרוני 4 מהירויות'],['ממדים','100×43 ס"מ'],['מאפיינים','2 מנועים | 2 יציאות אוויר | 2 מדפים פונקציונליים | סינון בלבד'],['קוד מוצר','CCSIDE10004']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/X-side-copia.pdf'},{n:'סרטוט מידות',u:'https://airforcespa.it/wp-content/uploads/AFLISIDECS.pdf'}]},
+  'tata':{name:'TATA',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/TATA-90-ambiente_pp-2-1920x1048.jpg','https://airforcespa.it/wp-content/uploads/TATA-90-ambiente-1-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/TATA-150-ambiente-1-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/TATA-Particolare-B-1-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AFLITATA.pdf',specs:[['דגמים','90 / 120 / 150 ס"מ — שחור מט'],['ספיקת אוויר','490 מ"ק/ש'],['רמת רעש','63 / 69 / 71 dB(A)'],['הספק','258 W'],['תאורה','2×9W Strip LED – 460 Lux'],['בקרה','לוח אלקטרוני 4 מהירויות'],['ממדים','90/120/150×52 ס"מ'],['מאפיינים','2 מנועים | תאי אחסון | סינון בלבד'],['קודי מוצר','CCTATA90001 / CCTATA120001 / CCTATA150001']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/X-tata-copia.pdf'},{n:'סרטוט מידות',u:'https://airforcespa.it/wp-content/uploads/AFLITATA.pdf'}]},
+  'downdraft':{name:'DOWNDRAFT',cat:'קולט אדים — נשלף',imgs:['https://airforcespa.it/wp-content/uploads/Downdraft-particolare-BK-1-1920x1358.jpg','https://airforcespa.it/wp-content/uploads/Downdraft-ambiente-IX-2-1920x1358.jpg','https://airforcespa.it/wp-content/uploads/Downdraft-particolare-Naked-2-1920x1358.jpg','https://airforcespa.it/wp-content/uploads/Downdraft-mobile-aperto-2-1920x1440.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/LIB0191834-30-03-23-1.pdf',specs:[['דגמים','שחור מט / נירוסטה / Naked'],['דירוג אנרגיה','A'],['ספיקת אוויר','730 מ"ק/ש'],['רמת רעש','43 / 63 / 68 dB(A)'],['הספק','257 W'],['תאורה','7W Strip LED – 253 Lux'],['בקרה','Touch 5 מהירויות'],['ממדים','90 ס"מ'],['חיתוך','850×100 מ"מ'],['מאפיינים','אי / חצי אי / קיר | Naked מתאים לכל חומר | מנוע מרוחק אפשרי'],['קודי מוצר','CCDD001 / CCDD002 / CCDD003']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/X-get-up-copia-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCDD001-1.pdf'}]},
+  'sharp':{name:'SHARP',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/Sharp-Rev3_pp-1920x1558.jpg','https://airforcespa.it/wp-content/uploads/Sharp-Rev2-1-1320x1920.jpg','https://airforcespa.it/wp-content/uploads/sharp-1.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AFLIGASH01-1.pdf',specs:[['דגמים','50 ס"מ — נירוסטה / שחור / לבן'],['דירוג אנרגיה','C'],['ספיקת אוויר','600 מ"ק/ש'],['רמת רעש','49 / 64 / 68 dB(A)'],['הספק','179.2 W'],['תאורה','2×2.1W LED – 3500K – 190 Lux'],['בקרה','לוח אלקטרוני 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','50 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','סינון בלבד | פילטרי ריח כלולים'],['קודי מוצר','CCSHA5001 / CCSHA5002 / CCSHA5003']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/Sharp-copia-2.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCSHA5001-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCSHA5001-1.pdf'}]},
+  'gaia':{name:'GAIA',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/Gaia45-ambiente_pp-1920x1500.jpg','https://airforcespa.it/wp-content/uploads/Gaia45-ambiente-3-1320x1920.jpg','https://airforcespa.it/wp-content/uploads/Gaia-Island-Comando-5-1320x1920.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AFLIGASH01-1.pdf',specs:[['דגמים','45 ס"מ — נירוסטה / שחור'],['דירוג אנרגיה','C'],['ספיקת אוויר','600 מ"ק/ש'],['רמת רעש','49 / 64 / 68 dB(A)'],['הספק','179.2 W'],['תאורה','2×2.1W LED – 3500K – 190 Lux'],['בקרה','לוח אלקטרוני 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','45 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','זווית 45° | סינון בלבד | פילטרי ריח כלולים'],['קודי מוצר','CCGAI45001 / CCGAI45002']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/Gaia-45-1-copia-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCGAI45001-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCGAI45001-1.pdf'}]},
+  'q-bic-island':{name:'Q-BIC ISLAND',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/Q-Bic-isola-cavi-particolare-rev2_pp-1920x1187.jpg','https://airforcespa.it/wp-content/uploads/Q-Bic-isola-Cavi-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/Q-Bic-isola-Particolare-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/Q-Bic-isola-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AFLIQBICGI-1.pdf',specs:[['דגמים','90 ס"מ (כבלים/מוטות) / 120 ס"מ (כבלים/מוטות) — שחור מט'],['דירוג אנרגיה','90: A | 120: B'],['ספיקת אוויר','90: 645 מ"ק/ש | 120: 635 מ"ק/ש'],['רמת רעש','47 / 59 / 63 dB(A)'],['הספק','90: 229.6W | 120: 238W'],['תאורה','90: 2×4.8W Strip LED 4000K | 120: 2×9W Strip LED 4000K'],['בקרה','שלט רחוק 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','90/120×40 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['תלייה','בכבלים או במוטות — מדפי זכוכית כהה ומשטח עליון'],['קודי מוצר','CCQBICIG90504 / CCQBICIG90508 / CCQBICIG120501 / CCQBICIG120502']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIQBICGI-2.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCQBICIG90504-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCQBICIG90504-1.pdf'}]},
+  'vis-head-free':{name:'VIS HEAD FREE NO DROP',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/Vis-HeadFree2024COPERTINA_.jpg','https://airforcespa.it/wp-content/uploads/Vis-HeadFree2024-con-camino-1-1320x1920.jpg','https://airforcespa.it/wp-content/uploads/Vis-HeadFree2024-particolare-IX-1320x1920.jpg','https://airforcespa.it/wp-content/uploads/ProVerticale-ambiente-1-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AFLIVIS-4.pdf',specs:[['דגמים','90/120 ס"מ נירוסטה/שחור מט'],['דירוג אנרגיה','A++'],['ספיקת אוויר','850 מ"ק/ש'],['רמת רעש','44 / 62 / 70 dB(A)'],['הספק','90: 179.8W | 120: 184W'],['תאורה','Bar LED'],['בקרה','רוטטיבית — מודולציית הספק'],['מרחק מכיריה חשמלית','40 ס"מ'],['מרחק מכיריה גז','60 ס"מ'],['מאפיינים','No-Drop | ערכת ארובות כלולה'],['קודי מוצר','CCVISW90001 / CCVISW120001']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/Vis-head-free.pdf'},{n:'סרטוט מידות',u:'https://airforcespa.it/wp-content/uploads/AFLIVIS-4.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCVISW90001.pdf'}]},
+  'v8-inox':{name:'V8 INOX',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/V8-inox_COPERTINA_pp-1-1920x1456.jpg','https://airforcespa.it/wp-content/uploads/V8-1-1920x1280.jpg','https://airforcespa.it/wp-content/uploads/V8_dettaglio_2-1-1920x1280.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/VITAMINA-8-1.pdf',specs:[['דגמים','60/90 ס"מ — נירוסטה'],['דירוג אנרגיה','A'],['ספיקת אוויר','675 מ"ק/ש'],['רמת רעש','50 / 60 / 66 dB(A)'],['הספק','224.2 W'],['תאורה','2×2.1W LED – 4000K – 143 Lux'],['בקרה','Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','60/90 ס"מ'],['מרחק מכיריה חשמלית','40 ס"מ'],['מרחק מכיריה גז','60 ס"מ'],['גוון','נירוסטה פרימיום — ערכת ארובות כלולה'],['מאפיינים','שאיבה היקפית (Perimeter Aspiration)'],['קודי מוצר','CCF177V86504 / CCF177V89516']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIF177V-3.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF177V86504-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF177V86504-1.pdf'}]},
+  'q-bic-wall':{name:'Q-BIC WALL',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/Q-Bic-PerspView_COPERTINA_-1-1920x1684.jpg','https://airforcespa.it/wp-content/uploads/Q-BIC-Frontale-1-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/Q-BIC-Particolare-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-Q-bic-90-wall-da-sostituire-copia-1.pdf',specs:[['דגמים','90 / 120 ס"מ — שחור מט'],['דירוג אנרגיה','A'],['ספיקת אוויר','90: 655 מ"ק/ש | 120: 635 מ"ק/ש'],['רמת רעש','47 / 59 / 63 dB(A)'],['הספק','90: 224.8W | 120: 229W'],['תאורה','90: 4.8W Strip LED 4000K | 120: 9W Strip LED 4000K'],['בקרה','שלט רחוק 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','90/120 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['עיצוב','ריבועי מינימליסטי — DNA של Q-BIC | שאיבה אחורית'],['קודי מוצר','CCQBICWG90502 / CCQBICWG120501']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIQBICGW-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCQBICWG90502-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCQBICWG90502-1.pdf'}]},
+  'foehn':{name:'FOEHN',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/Foehn_COPERTINA_pp-1-1920x1132.jpg','https://airforcespa.it/wp-content/uploads/Foehn-Ambiente-1920x1200.jpg','https://airforcespa.it/wp-content/uploads/Foehn-Aperta-1920x1200.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/Foehn-3.pdf',specs:[['דגמים','60/90 ס"מ — שחור'],['דירוג אנרגיה','A'],['ספיקת אוויר','600 מ"ק/ש'],['רמת רעש','46 / 60 / 66 dB(A)'],['הספק','207 W'],['תאורה','7W Strip LED – 3000K – 253 Lux'],['בקרה','Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','60/90 ס"מ'],['מרחק מכיריה חשמלית','45 ס"מ'],['מרחק מכיריה גז','60 ס"מ'],['עיצוב','סקנדינבי — ארובה דקה וחלקה | ערכת ארובות כלולה']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LIB0188422_03-2023-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF6001-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF6001-1.pdf'}]},
+  'omega':{name:'OMEGA',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/Omega-80-BK-PerspViewNocamino-2-1920x1529.jpg','https://airforcespa.it/wp-content/uploads/Omega-60-BK-PerspViewNocamino-1391x1920.jpg','https://airforcespa.it/wp-content/uploads/Omega-80-BK-PerspView-2.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AIRFORCE-DISEGNI-TECNICI-SITO_OMEGA.svg',specs:[['דגמים','60/80/90 ס"מ — שחור מט'],['דירוג אנרגיה','A+'],['ספיקת אוויר','740 מ"ק/ש'],['רמת רעש','51 / 65 / 70 dB(A)'],['הספק','269.2 W'],['תאורה','2×2.1W LED – 3500K – 135 Lux (Dimmable)'],['בקרה','Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','60/80/90 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['סוג','ראש חופשי — ללא ארובה גלויה | שאיבה היקפית | ערכת ארובות כלולה'],['קודי מוצר','AF000059 / AF000060 / AF000070']],downloads:[{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/product-fiche-PFAF000059.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/energy-label-ELAF000059.pdf'}]},
+  'clio':{name:'CLIO',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/Clio-PerspView-NoCamino-2-1920x1818.jpg','https://airforcespa.it/wp-content/uploads/Clio-AmbPerspView-1920x1320.jpg','https://airforcespa.it/wp-content/uploads/Clio-PerspView-1391x1920.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/TDS006-clio-airforc-3.pdf',specs:[['דגמים','60/80 ס"מ — שחור'],['דירוג אנרגיה','C'],['ספיקת אוויר','600 מ"ק/ש'],['רמת רעש','48 / 60 / 64 dB(A)'],['הספק','179.2 W'],['תאורה','2×2.1W LED – 3500K – 147 Lux (Dimmable)'],['בקרה','Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','60/80 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['סוג','ראש חופשי — פרופיל צר ואלגנטי | שאיבה היקפית | ערכת ארובות כלולה'],['קודי מוצר','AF000064 / AF000065']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00037W-2.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFAF000064.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELAF000064.pdf'}]},
+  'alpha':{name:'ALPHA',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/Alpha-Ambiente-6-1920x1513.jpg','https://airforcespa.it/wp-content/uploads/Alpha-Ambiente-2-1320x1920.jpg','https://airforcespa.it/wp-content/uploads/Alpha-60-FrontView-2-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/ALPHA-ALPHA-S-2.pdf',specs:[['דגמים','50/60/80/90 ס"מ — שחור'],['דירוג אנרגיה','C'],['ספיקת אוויר','350 מ"ק/ש'],['רמת רעש','43 / 62 dB(A)'],['הספק','94.2 W'],['תאורה','2×2.1W LED – 3500K – 443 Lux'],['בקרה','לחצנים מכניים 3 מהירויות'],['ממדים','50/60/80/90 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['עיצוב','קלאסי עם ארובה — נצחי ואלגנטי | שאיבה היקפית | ערכת ארובות כלולה'],['קודי מוצר','CCAL5002 / CCAL6002 / CCAL8001 / CCAL9002']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIAL-3.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCAL5002-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCAL5002-1.pdf'}]},
+  'vis-boxy-wall':{name:'VIS BOXY WALL',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/Vis-Boxy-Scontornata-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/VIS-wall-Test-A-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/ProBOX-ambiente-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-Vis-wall-copia-1.pdf',specs:[['דגמים','90/120 ס"מ — נירוסטה / שחור מט'],['דירוג אנרגיה','A++'],['ספיקת אוויר','800 מ"ק/ש'],['רמת רעש','44 / 62 / 70 dB(A)'],['הספק','90: 179.8W | 120: 184W'],['תאורה','90: 4.8W Strip LED 4000K | 120: 9W Strip LED 4000K'],['בקרה','רוטטיבית אלקטרונית'],['ממדים','90/120 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','מערכת No-Drop עם Baffle נירוסטה'],['קודי מוצר','CCVISW90003 / CCVISW90004 / CCVISW120003 / CCVISW120004']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIVIS-3.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCVISW90003-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCVISW90003-1.pdf'}]},
+  'easy-up':{name:'SILHOUETTE EASY UP FLAT',cat:'קולט תקרה',imgs:['https://airforcespa.it/wp-content/uploads/Air_Force_Silhouette_Easy_Up_Estetica_HD_COPERTINA_pp-1920x1728.jpg','https://airforcespa.it/wp-content/uploads/Silhouette-IX-Ambiente-1-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/Silhouette-aperta-IX-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/Silhouette-BK-particolare-1920x949.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/silhouette-no-flat-1-copia.pdf',specs:[['דגמים','100 ס"מ — שחור / לבן / נירוסטה'],['דירוג אנרגיה','A+'],['ספיקת אוויר','740 מ"ק/ש'],['רמת רעש','45 / 65 / 70 dB(A)'],['הספק','174.6 W'],['תאורה','2×4.8W Strip LED – 4000K – 133 Lux'],['בקרה','שלט רחוק 6 מהירויות (5+1 אינטנסיבי)'],['משקל','16 ק"ג'],['ממדים','100×50 ס"מ'],['חיתוך','977×477 מ"מ'],['מאפיינים','מובנה בתקרה כוזבת מגובה 19 ס"מ בלבד | בלתי נראה לחלוטין'],['קודי מוצר','CCSIL100001 / CCSIL100002 / CCSIL100003']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00031W.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCSIL100001-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCSIL100001-1.pdf'}]},
+  'easy-fit':{name:'SILHOUETTE EASY FIT',cat:'קולט תקרה',imgs:['https://airforcespa.it/wp-content/uploads/Air_Force_Easy_Fit_Silhouette_Estetica_HD_COPERTINA_pp-1-1920x1728.jpg','https://airforcespa.it/wp-content/uploads/Air_Force_Easy_Fit_Silhouette_Vert_Screen_HD_pp-1-1380x1920.jpg','https://airforcespa.it/wp-content/uploads/Air_Force_Easy_Fit_Silhouette_Emo_HD_pp-1-1380x1920.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/SILHOUETTE-SINERGIA-EASY-FIT-2.pdf',specs:[['דגמים','100 ס"מ — שחור / לבן / נירוסטה'],['ספיקת אוויר','550 מ"ק/ש'],['רמת רעש','55 / 67 / 70 dB(A)'],['הספק','94.6 W'],['תאורה','2×4.8W Strip LED – 4000K – 133 Lux'],['בקרה','שלט רחוק 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','100×50 ס"מ'],['מאפיינים','ניתן להתקנה ללא תקרה כוזבת | סינון בלבד | 2 פילטרים כלולים (שומן + ריח)'],['קודי מוצר','CCSIL100007 / CCSIL100008 / CCSIL100009']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00018W-1.pdf'},{n:'סרטוט מידות',u:'https://airforcespa.it/wp-content/uploads/SILHOUETTE-SINERGIA-EASY-FIT-2.pdf'}]},
+  'compact-up':{name:'COMPACT UP',cat:'קולט תקרה',imgs:['https://airforcespa.it/wp-content/uploads/Air_Force_Built_Inn_Compact_Up_Det_HD_COPERTINA_pp-1920x1152.jpg','https://airforcespa.it/wp-content/uploads/Air_Force_Built_Inn_Compact_Up_Det_HD_pp-4-1920x1152.jpg','https://airforcespa.it/wp-content/uploads/Air_Force_Built_Inn_Compact_Up_Vert_HD_pp-1-1320x1920.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/Compact-Up-1-copia-1.pdf',specs:[['דגמים','83 ס"מ — שחור / לבן / נירוסטה'],['דירוג אנרגיה','A'],['ספיקת אוויר','625 מ"ק/ש'],['רמת רעש','49 / 59 / 65 dB(A)'],['הספק','224.6 W'],['תאורה','2×2.3W Strip LED – 4000K – 240 Lux'],['בקרה','שלט רחוק 4 מהירויות (3+1 אינטנסיבי)'],['משקל','12 ק"ג'],['ממדים','83 ס"מ'],['חיתוך','815×265 מ"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','55 ס"מ'],['מאפיינים','גרסת מיני-תקרה | יציאת אוויר מתכווננת (צד/מעלה)'],['קודי מוצר','CCCOMU83001 / CCCOMU83002 / CCCOMU83003']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLICOM01-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCCOMU83001-3.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCCOMU83001-1.pdf'}]},
+  'prima-80':{name:'PRIMA 80 4Z 1B',cat:'כירייה — אינדוקציה',imgs:['https://airforcespa.it/wp-content/uploads/PRIMA-80-4-B-FrontView-1920x1731.jpg'],drawing:null,specs:[['קוד מוצר','PCPOP80005'],['בקרה','Touch 4 אזורים + Boost'],['ממדים','78×52 ס"מ'],['חיתוך','750×490 מ"מ'],['הספק','7.2 kW']],downloads:[]},
+  'pop-60-4z':{name:'POP 60 4Z',cat:'כירייה — אינדוקציה',imgs:['https://airforcespa.it/wp-content/uploads/POP-60-4Z_pp_1-1-1920x1731.jpg'],drawing:null,specs:[['קוד מוצר','PCPOP60004'],['אזורי בישול','4 אזורים'],['ממדים','59×52 ס"מ'],['חיתוך','560×490 מ"מ'],['הספק','6.2 kW'],['בקרה','Touch + Boost'],['רמות עוצמה','9 רמות + Boost'],['טיימר','כן — לכל אזור'],['נעילת ילדים','כן'],['גוון','שחור קריסטל']],downloads:[]},
+  'pop-60-3z':{name:'POP 60 3Z',cat:'כירייה — אינדוקציה',imgs:['https://airforcespa.it/wp-content/uploads/POP-60_3Z_pp-2-1920x1731.jpg'],drawing:null,specs:[['אזורי בישול','3 אזורים'],['ממדים','59×52 ס"מ'],['חיתוך','560×490 מ"מ'],['הספק','5.2 kW'],['בקרה','Touch'],['רמות עוצמה','9 רמות'],['טיימר','כן — לכל אזור'],['נעילת ילדים','כן'],['גוון','שחור קריסטל'],['מאפיינים','עיצוב נקי ומינימליסטי']],downloads:[]},
+  'pop-80':{name:'POP 80 4Z',cat:'כירייה — אינדוקציה',imgs:['https://airforcespa.it/wp-content/uploads/POP-80-4_pp-3-1920x1731.jpg'],drawing:null,specs:[['קוד מוצר','PCPOP80004'],['אזורי בישול','4 אזורים'],['ממדים','78×52 ס"מ'],['חיתוך','750×490 מ"מ'],['הספק','7.2 kW'],['בקרה','Touch + Boost'],['רמות עוצמה','9 רמות + Boost'],['טיימר','כן — לכל אזור'],['נעילת ילדים','כן'],['גוון','שחור קריסטל']],downloads:[]},
+  '90-plus':{name:'90 PLUS',cat:'כירייה — אינדוקציה',imgs:['https://airforcespa.it/wp-content/uploads/90-PLUS_pp-3-1920x1731.jpg'],drawing:null,specs:[['אזורי בישול','5 אזורים'],['ממדים','88×52 ס"מ'],['חיתוך','850×490 מ"מ'],['הספק','7.4 kW'],['בקרה','Touch + Boost'],['רמות עוצמה','9 רמות + Boost'],['טיימר','כן — לכל אזור'],['נעילת ילדים','כן'],['גוון','שחור קריסטל'],['מאפיינים','אזור אובלי גדול למחבת ווק']],downloads:[]},
+  'domino-30':{name:'DOMINO POP 30',cat:'כירייה — דומינו מודולרי',imgs:['https://airforcespa.it/wp-content/uploads/Domino-POP-30_pp-2-1920x1731.jpg'],drawing:null,specs:[['אזורי בישול','2 אזורים'],['ממדים','29×52 ס"מ'],['חיתוך','270×490 מ"מ'],['הספק','3.2 kW'],['בקרה','Touch + Boost'],['רמות עוצמה','9 רמות + Boost'],['טיימר','כן'],['נעילת ילדים','כן'],['גוון','שחור קריסטל'],['סוג','מודולרי — שלב עם דומינו נוסף']],downloads:[]},
+  'easy-90':{name:'EASY 90',cat:'כירייה — אינדוקציה',imgs:['https://airforcespa.it/wp-content/uploads/EASY_90_pp-5-1920x1731.jpg'],drawing:null,specs:[['אזורי בישול','5 אזורים'],['ממדים','88×52 ס"מ'],['חיתוך','850×490 מ"מ'],['הספק','7.4 kW'],['בקרה','Touch + Boost'],['רמות עוצמה','9 רמות + Boost'],['טיימר','כן'],['נעילת ילדים','כן'],['גוון','שחור קריסטל'],['מאפיינים','פשוט ונגיש — ביצועים מלאים']],downloads:[]},
+  'easy-60':{name:'EASY 60',cat:'כירייה — אינדוקציה',imgs:['https://airforcespa.it/wp-content/uploads/POP-60-4Z_pp_1-1-1920x1731.jpg'],drawing:null,specs:[['אזורי בישול','4 אזורים'],['ממדים','59×52 ס"מ'],['חיתוך','560×490 מ"מ'],['הספק','6.2 kW'],['בקרה','Touch + Boost'],['רמות עוצמה','9 רמות + Boost'],['טיימר','כן'],['נעילת ילדים','כן'],['גוון','שחור קריסטל'],['מאפיינים','קומפקטי וחסכוני']],downloads:[]},
+  'teppanyaki':{name:'TEPPAN YAKI 38',cat:'לוח טפן יאקי',imgs:['https://airforcespa.it/wp-content/uploads/TeppanYaki-38_pp-2-1920x1731.jpg'],drawing:null,specs:[['ממדים','38×52 ס"מ'],['חיתוך','350×490 מ"מ'],['חומר','ברזל יצוק'],['הספק','3.0 kW'],['בקרה','Touch'],['רמות עוצמה','9 רמות'],['טיימר','כן'],['נעילת ילדים','כן'],['שימוש','טפן יאקי, פנקייק, ביצים, בשר'],['מאפיינים','חום אחיד — בישול אסייתי מקצועי']],downloads:[]},
+  'innova-visio':{name:'INNOVA VISIO PLUS',cat:'כירייה קולטת',imgs:['https://airforcespa.it/wp-content/uploads/Innova-visio-Plus-Petra-FrontView-1320x1920.jpg','https://airforcespa.it/wp-content/uploads/Innova-Visio-Plus-Petra-AmbZenView-1380x1920.jpg','https://airforcespa.it/wp-content/uploads/Air_Force_Visio_PLUS_Vert_HD_QUADRATApp.jpg','https://airforcespa.it/wp-content/uploads/Air_Force_VISIOPLUS_ZEN_HD_pp-copia-1-1920x1397.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AIRFORCE-DISEGNI-TECNICI-SITO_VISIO-PLUS-.svg',specs:[['דגמים','INNOVA VISIO PLUS 90 — A/F Petra'],['דירוג אנרגיה','A'],['ספיקת אוויר','665 מ"ק/ש'],['רמת רעש','42/67/71 dB(A)'],['הספק','7.4 kW'],['אזורי בישול','4 × 2.1 kW (Boost 3 kW)'],['ממדים','90×52 ס"מ'],['בקרה','Touch Slider | Full Matte'],['מאפיינים','Zero-Moisture | Petra']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00053W.pdf'},{n:'גיליון טכני — A',u:'https://airforcespa.it/wp-content/uploads/PFAF000026.pdf'},{n:'תווית אנרגיה — A',u:'https://airforcespa.it/wp-content/uploads/ELAF000026.pdf'},{n:'גיליון טכני — F',u:'https://airforcespa.it/wp-content/uploads/PFAF000027.pdf'},{n:'תווית אנרגיה — F',u:'https://airforcespa.it/wp-content/uploads/ELAF000027.pdf'}]},
+  'innova-slim':{name:'INNOVA SLIM PLUS',cat:'כירייה קולטת',imgs:['https://airforcespa.it/wp-content/uploads/Air_Force_Slim_PLUS_Vert_HD_QUADRATA_pp.jpg','https://airforcespa.it/wp-content/uploads/Air_Force_Slim_PLUS_ZEN_HD_pp-5-1920x1397.jpg','https://airforcespa.it/wp-content/uploads/Air_Force_Slim_Smart_Gen_HD_pp-1.jpg','https://airforcespa.it/wp-content/uploads/Slim-Plus-1.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/Innova-Slim-4-copia.pdf',specs:[['דגמים','INNOVA SLIM PLUS 90 — A/F Petra'],['דירוג אנרגיה','A'],['ספיקת אוויר','665 מ"ק/ש'],['רמת רעש','42/67/71 dB(A)'],['הספק','7.4 kW'],['אזורי בישול','4 × 2.1 kW (Boost 3 kW)'],['ממדים','90×52 ס"מ'],['בקרה','Touch Slider | Full Black'],['מאפיינים','Zero-Moisture | SLIM Profile | Petra']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00013W.pdf'},{n:'גיליון טכני — A',u:'https://airforcespa.it/wp-content/uploads/PFCCINN9002-1.pdf'},{n:'תווית אנרגיה — A',u:'https://airforcespa.it/wp-content/uploads/ELCCINN9002-1.pdf'}]},
+  'innova-artis':{name:'INNOVA ARTIS PLUS',cat:'כירייה קולטת',imgs:['https://airforcespa.it/wp-content/uploads/Artis-plus-1.jpg','https://airforcespa.it/wp-content/uploads/Air_Force_Artis_PLUS_Zen_HD_pp-2-1920x1397.jpg','https://airforcespa.it/wp-content/uploads/Innova-Artis-80-Plus-Petra-AmbFrontView-1320x1920.jpg','https://airforcespa.it/wp-content/uploads/Air_Force_Artis_Smart_Gen_HD_pp-1.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/Innova-Artis-4-copia.pdf',specs:[['דגמים','INNOVA ARTIS PLUS 60/80 A/F'],['דירוג אנרגיה','A+'],['ספיקת אוויר','570 מ"ק/ש'],['רמת רעש','39/64/70 dB(A)'],['הספק','7.4 kW'],['אזורי בישול','4 × 2.1 kW (Boost 3 kW)'],['ממדים','60×52 או 80×52 ס"מ'],['בקרה','Touch Slider | Full Black'],['מאפיינים','Zero-Moisture | Full Matte | Petra']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00009W-2.pdf'},{n:'גיליון טכני 60',u:'https://airforcespa.it/wp-content/uploads/PFCCINN6001-1.pdf'},{n:'תווית אנרגיה 60',u:'https://airforcespa.it/wp-content/uploads/ELCCINN6001-1.pdf'},{n:'גיליון טכני 80',u:'https://airforcespa.it/wp-content/uploads/PFCCINN8001-1.pdf'},{n:'תווית אנרגיה 80',u:'https://airforcespa.it/wp-content/uploads/ELCCINN8001-1.pdf'}]},
+
+  'new-moon-r':{name:'NEW MOON R',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/NewMoon-Restyling-BK_pp-1920x1337.jpg','https://airforcespa.it/wp-content/uploads/NewMoon-Amb-BK-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/NewMoon-Amb-Pearl-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-new-moon-copia-1.pdf',specs:[['דגמים','45 ס"מ — שחור / לבן / לבן מבריק'],['דירוג אנרגיה','C'],['ספיקת אוויר','595 מ"ק/ש'],['רמת רעש','49 / 64 / 67 dB(A)'],['הספק','179.2 W'],['תאורה','2×2.1W LED – 3500K – 143 Lux'],['בקרה','שלט רחוק 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','45 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','סינון בלבד | פילטרי ריח כלולים'],['קודי מוצר','CCNM45561 / CCNM45562 / CCNM45563']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00034W.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCNM45561-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCNM45561-1.pdf'}]},
+  'luna-r':{name:'LUNA R',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/Luna-BK-ambiente-NuovoFondo_pp-1920x1221.jpg','https://airforcespa.it/wp-content/uploads/Luna-Amb-Pearl-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/Luna-Amb-White-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-sospesa-af-copia-1.pdf',specs:[['דגמים','45 ס"מ — שחור / לבן / לבן מבריק'],['דירוג אנרגיה','C'],['ספיקת אוויר','595 מ"ק/ש'],['רמת רעש','49 / 64 / 67 dB(A)'],['הספק','179.2 W'],['תאורה','2×2.1W LED – 3500K – 168 Lux'],['בקרה','שלט רחוק 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','45 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','סינון בלבד | פילטרי ריח כלולים'],['קודי מוצר','CCLUN45574 / CCLUN45575 / CCLUN45576']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00034W.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCLUN45574-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCLUN45574-1.pdf'}]},
+  'ballerina-crisalide':{name:'BALLERINA CRISALIDE',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/BallerinaAmbienteNera_pp-1-1920x1147.jpg','https://airforcespa.it/wp-content/uploads/BallerinaAmbienteBiancaLOGO-1920x1920.jpg','https://airforcespa.it/wp-content/uploads/BallerinaParticolare-Nera-1920x1920.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-ballerina-copia-1.pdf',specs:[['דגמים','47.5 ס"מ — שחור / לבן'],['דירוג אנרגיה','B'],['ספיקת אוויר','700 מ"ק/ש'],['רמת רעש','50 / 65 / 68 dB(A)'],['הספק','254 W'],['תאורה','4×1W LED – 4000K – 112 Lux'],['בקרה','תצוגת Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','47.5 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','תצוגה עם שעון | סינון בלבד | פילטרי Long Life כלולים'],['קודי מוצר','CCBAL5044 / CCBAL5047']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIBALLERINA-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCBAL5044-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCBAL5044-1.pdf'}]},
+  'iconic':{name:'ICONIC',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/Iconic_senza-caminio_COPERTINA_pp-1-1920x1906.jpg','https://airforcespa.it/wp-content/uploads/Iconic-ambiente-rev2-1920x1280.jpg','https://airforcespa.it/wp-content/uploads/Iconic-particolare-1920x1280.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/iconic-con-camino-1-copia-1.pdf',specs:[['דגמים','80 ס"מ — שחור'],['דירוג אנרגיה','C'],['ספיקת אוויר','605 מ"ק/ש'],['רמת רעש','49 / 64 / 68 dB(A)'],['הספק','179.8 W'],['תאורה','4.8W Strip LED – 4000K – 142 Lux'],['בקרה','רוטרי 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','80 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','ערכת ארובות אופציונלית | פילטרי ריח כלולים'],['קוד מוצר','CCICO8504']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIICRT-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCICO8504-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCICO8504-1.pdf'}]},
+  'shape':{name:'SHAPE',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/Air_fondo_SHAPE_NERA_HD_pp-1854x1920.jpg','https://airforcespa.it/wp-content/uploads/Shape-IX-PerspView_pp-1920x1818.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AIRFORCE-DISEGNI-TECNICI-SITO_SHAPE.svg',specs:[['דגמים','60/90/120 ס"מ — נירוסטה / שחור'],['דירוג אנרגיה','A'],['ספיקת אוויר','600 מ"ק/ש'],['רמת רעש','49 / 59 / 65 dB(A)'],['הספק','60/90: 224.8W | 120: 229W'],['תאורה','60/90: 4.8W Strip LED 4000K | 120: 9W Strip LED 4000K'],['בקרה','Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','60/90/120 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['קודי מוצר','CCSHA6001 / CCSHA6002 / CCSHA9001 / CCSHA9002 / CCSHA12001 / CCSHA12002']],downloads:[{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCSHA6001-2.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/shape_energy_ELCCSHA6001.pdf'}]},
+  'f205':{name:'F205',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/F205-60-Scontornata-1920x1440.jpg','https://airforcespa.it/wp-content/uploads/F205-ambiente-INOX-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-F205-copia-1.pdf',specs:[['דגמים','60/90 ס"מ — שחור / לבן'],['דירוג אנרגיה','A'],['ספיקת אוויר','610 מ"ק/ש'],['רמת רעש','48 / 62 / 66 dB(A)'],['הספק','224.2 W'],['תאורה','2×2.1W LED – 3500K – 504 Lux'],['בקרה','Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','60/90 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['קודי מוצר','CCF2056504 / CCF2056505 / CCF2059537 / CCF2059538']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIF205-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF2056504-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF2056504-1.pdf'}]},
+  'incasso-pro':{name:'INCASSO PRO NO DROP',cat:'קולט מובנה — ללא טפטוף',imgs:['https://airforcespa.it/wp-content/uploads/Incasso-Pro-1.jpg','https://airforcespa.it/wp-content/uploads/IncassoPro_Particolare-2-1320x1920.jpg','https://airforcespa.it/wp-content/uploads/IncassoProfessionale-Ambiente-5-1920x1280.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/incassopro-2.pdf',specs:[['דגמים','52/72/85/100 ס"מ — נירוסטה'],['דירוג אנרגיה','A'],['ספיקת אוויר','625 מ"ק/ש'],['רמת רעש','44 / 60 / 64 dB(A)'],['הספק','224.8 W'],['תאורה','4.8W Strip LED – 4000K – 97 Lux'],['בקרה','לוח אלקטרוני 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','52/72/85/100 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','No-Drop עם Baffle נירוסטה | התקנה קלה'],['קודי מוצר','CCINCP52501 / CCINCP72501 / CCINCP85502 / CCINCP100501']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIINC02-2-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCINCP52501-3.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCINCP52501-3.pdf'}]},
+  'f300-nodrop':{name:'F300 NO DROP',cat:'קולט מובנה — ללא טפטוף',imgs:['https://airforcespa.it/wp-content/uploads/F300-RLN-BK-NoDrop-AmbView-1-1920x1280.jpg','https://airforcespa.it/wp-content/uploads/F300-NoDrop-IX-Ambiente-2023-1920x1372.jpg','https://airforcespa.it/wp-content/uploads/F300-NoDrop-IX-Particolare-1920x987.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-f300-rln-e-no-drop-copia-2.pdf',specs:[['דגמים','60/90/120 ס"מ — נירוסטה / שחור'],['דירוג אנרגיה','A'],['ספיקת אוויר','615 מ"ק/ש'],['רמת רעש','49 / 59 / 65 dB(A)'],['הספק','60/90: 224.2W | 120: 228.4W'],['תאורה','60/90: 2×2.1W LED 3500K | 120: 4×2.1W LED 3500K'],['בקרה','לוח אלקטרוני 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','60/90/120 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','50 ס"מ'],['מאפיינים','No-Drop עם Baffle נירוסטה | זגוגית מתכווננת עם הגנה על ארון'],['קודי מוצר','CCF300ND6501 / CCF300ND6502 / CCF300ND9501 / CCF300ND9502 / CCF300ND12001 / CCF300ND12002']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIF300ND.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF300ND6501.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF300ND6501.pdf'}]},
+  'f300':{name:'F300',cat:'קולט מובנה',imgs:['https://airforcespa.it/wp-content/uploads/F300-RLN-LowPerspView-2048x1365-1-1920x1280.jpg','https://airforcespa.it/wp-content/uploads/F300-RLN-BK-AmbView-1-1920x1280.jpg','https://airforcespa.it/wp-content/uploads/F300-BK-Ambiente-1-1920x1280.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-f300-rln-e-no-drop-copia-1.pdf',specs:[['דגמים','60/90/120 ס"מ — נירוסטה / שחור'],['דירוג אנרגיה','A'],['ספיקת אוויר','620 מ"ק/ש'],['רמת רעש','49 / 59 / 65 dB(A)'],['הספק','60/90: 224.2W | 120: 228.4W'],['תאורה','60/90: 2×2.1W LED 3500K | 120: 4×2.1W LED 3500K'],['בקרה','לוח אלקטרוני 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','60/90/120 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','50 ס"מ'],['מאפיינים','זגוגית מתכווננת עם הגנה על ארון'],['קודי מוצר','CCF3006514 / CCF3006515 / CCF3009529 / CCF3009530 / CCF300120006 / CCF300120007']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00032W.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF3006514-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF3006514-1.pdf'}]},
+  'compact-in':{name:'COMPACT IN',cat:'קולט מובנה',imgs:['https://airforcespa.it/wp-content/uploads/Air_Force_Built_Inn_Compact_Det_HD_pp-5-1920x1152.jpg','https://airforcespa.it/wp-content/uploads/Air_Force_Built_Inn_Compact_Vert_HD_pp-copia-1320x1920.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/Compact-In-copia-1.pdf',specs:[['דגמים','53/83 ס"מ — נירוסטה/שחור'],['דירוג אנרגיה','A'],['ספיקת אוויר','625 מ"ק/ש'],['רמת רעש','49 / 59 / 65 dB(A)'],['הספק','224.6 W'],['תאורה','2×2.3W Strip LED – 4000K – 240 Lux'],['בקרה','לוח אלקטרוני 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','53/83 ס"מ'],['חיתוך','53: 515×265 | 83: 815×265 מ"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','55 ס"מ'],['קודי מוצר','CCCOMI53001 / CCCOMI53002 / CCCOMI83001 / CCCOMI83002']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLICOM01-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCCOMI53001-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCCOMI53001.pdf'}]},
+  'modulo-plus':{name:'MODULO PLUS',cat:'קולט מובנה',imgs:['https://airforcespa.it/wp-content/uploads/Modulo-Plus-BK_COPERTINA-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/Modulo-Plus-Ambiente-IX-1920x1593.jpg','https://airforcespa.it/wp-content/uploads/Modulo-Plus-Ambiente-BK-Rev2-1920x1593.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/Modulo-Plus-52-72-copia-1.pdf',specs:[['דגמים','52/72 ס"מ — נירוסטה/שחור'],['דירוג אנרגיה','A'],['ספיקת אוויר','625 מ"ק/ש'],['רמת רעש','49 / 59 / 65 dB(A)'],['הספק','224.6 W'],['תאורה','2×2.1W LED – 3500K – 210 Lux'],['בקרה','לוח אלקטרוני 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','52/72 ס"מ'],['חיתוך','52: 494×262 | 72: 694×262 מ"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['קודי מוצר','CCMODP52007 / CCMODP52008 / CCMODP72004 / CCMODP72005']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00020W-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCMODP52007-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCMODP52007-1.pdf'}]},
+  'modulo-pop':{name:'MODULO POP',cat:'קולט מובנה',imgs:['https://airforcespa.it/wp-content/uploads/Modulo-POP_COPERTINA-1-1920x987.jpg','https://airforcespa.it/wp-content/uploads/Modulo-POP-72-Ambiente-1334x1920.jpg','https://airforcespa.it/wp-content/uploads/Modulo-POP-52-Ambiente-1334x1920.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-modulo-pop-copia-1.pdf',specs:[['דגמים','52/72 ס"מ — נירוסטה/שחור'],['דירוג אנרגיה','C'],['ספיקת אוויר','600 מ"ק/ש'],['רמת רעש','49 / 65 dB(A)'],['הספק','179.2 W'],['תאורה','2×2.1W LED – 3500K – 168 Lux'],['בקרה','לחצנים 3 מהירויות'],['ממדים','52/72 ס"מ'],['חיתוך','52: 495×260 | 72: 695×260 מ"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['קודי מוצר','CCMOD52001 / CCMOD52004 / CCMOD72001 / CCMOD72002']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00022W.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCMOD52001-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCMOD52001-1.pdf'}]},
+  'slide-evo':{name:'SLIDE EVO',cat:'קולט מובנה',imgs:['https://airforcespa.it/wp-content/uploads/Slide-Evo-IX-90-PerspView-1920x1920.jpg','https://airforcespa.it/wp-content/uploads/Slide-Evo-IX-60-PerspView-1920x1920.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AIRFORCE-DISEGNI-TECNICI-SITO_SLIDE-EVO.svg',specs:[['דגמים','60/90 ס"מ — נירוסטה'],['דירוג אנרגיה','A'],['ספיקת אוויר','640 מ"ק/ש'],['רמת רעש','46 / 63 dB(A)'],['הספק','206 W'],['תאורה','2×3W LED'],['בקרה','לוח אלקטרוני 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','60/90 ס"מ'],['מרחק מכיריה חשמלית','43 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['קודי מוצר','AF000032 / AF000033']],downloads:[{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/Product_Fiche_AF000032.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/Energy_Label_AF000032.pdf'}]},
+  'slide':{name:'SLIDE',cat:'קולט מובנה',imgs:['https://airforcespa.it/wp-content/uploads/Slide-IX-90-PerspView-1920x1920.jpg','https://airforcespa.it/wp-content/uploads/Slide-IX-60-PerspView-1920x1920.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AIRFORCE-DISEGNI-TECNICI-SITO_SLIDE.svg',specs:[['דגמים','60/90 ס"מ — נירוסטה'],['דירוג אנרגיה','D'],['ספיקת אוויר','304 מ"ק/ש'],['רמת רעש','46 / 62 dB(A)'],['הספק','121 W'],['תאורה','2×3W LED'],['בקרה','לחצנים 3 מהירויות'],['ממדים','60/90 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['קודי מוצר','AF000034 / AF000035']],downloads:[{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/Energy_Label_AF000034.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/Product_Fiche_AF000035.pdf'}]},
+  'invisia':{name:'INVISIA',cat:'קולט מובנה',imgs:['https://airforcespa.it/wp-content/uploads/Invisia-IX-72-PerspView-1920x1010.jpg','https://airforcespa.it/wp-content/uploads/Invisia-IX-52-PerspView-1920x1202.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AIRFORCE-DISEGNI-TECNICI-SITO_INVISIA.svg',specs:[['דגמים','52/72 ס"מ — נירוסטה'],['דירוג אנרגיה','B'],['ספיקת אוויר','428 מ"ק/ש'],['רמת רעש','57 / 68 dB(A)'],['הספק','121 W'],['תאורה','2×3W LED'],['בקרה','רוטרי 3 מהירויות'],['ממדים','52/72 ס"מ'],['חיתוך','52: 495×260 | 72: 695×260 מ"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['קודי מוצר','AF000036 / AF000037']],downloads:[{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/Product_Fiche_AF000036.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/Energy_Label_AF000036.pdf'}]},
+  'prima-60-4z':{name:'PRIMA 60-4Z 1B',cat:'כירייה — אינדוקציה',imgs:['https://airforcespa.it/wp-content/uploads/PRIMA-60-4Z_pp-1-1920x1731.jpg'],drawing:null,specs:[['קוד מוצר','PCPOP60003'],['אזורי בישול','4 × Boost'],['הספק','7.2 kW'],['ממדים','59×52 ס"מ'],['חיתוך','55×49 ס"מ'],['בקרה','Touch + Boost'],['נעילת ילדים','כן']],downloads:[]},
+  'prima-80-4z':{name:'PRIMA 80-4Z 1B',cat:'כירייה — אינדוקציה',imgs:['https://airforcespa.it/wp-content/uploads/PRIMA-80-4-B-FrontView-1920x1731.jpg'],drawing:null,specs:[['קוד מוצר','PCPOP80005'],['אזורי בישול','4 × Boost'],['הספק','7.2 kW'],['ממדים','78×52 ס"מ'],['חיתוך','75×49 ס"מ'],['בקרה','Touch + Boost'],['נעילת ילדים','כן']],downloads:[]},
+  'plus-90':{name:'PLUS 90',cat:'כירייה — אינדוקציה',imgs:['https://airforcespa.it/wp-content/uploads/PLUS-90-5Z_pp-1920x1731.jpg'],drawing:null,specs:[['קוד מוצר','PC90072'],['אזורי בישול','4+1 XXL × Boost'],['הספק','10.4 kW'],['ממדים','90×52 ס"מ'],['חיתוך','83.5×48.5 ס"מ'],['בקרה','Touch Slider Full Black'],['נעילת ילדים','כן'],['מאפיינים','Power Management | אזור XXL למחבת ווק']],downloads:[]},
+  'innova-slim-80':{name:'INNOVA SLIM 80',cat:'כירייה קולטת',imgs:['https://airforcespa.it/wp-content/uploads/AIRFORCE_SLIM-80_Standard_aperta_Amb_hd_pp.jpg','https://airforcespa.it/wp-content/uploads/AIRFORCE_SLIM-80_zen_Standard_hd_pp.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AIRFORCE-DISEGNI-TECNICI-SITO_SLIM-80-.svg',specs:[['דגמים','INNOVA SLIM 80 — A/F'],['דירוג אנרגיה','A'],['ספיקת אוויר','625 מ"ק/ש'],['רמת רעש','41/66/70 dB(A)'],['הספק','7.4 kW'],['אזורי בישול','4 (2 עגולים 1.4 kW + 2 מלבניים 2.1 kW)'],['ממדים','80×38 ס"מ'],['בקרה','Touch Slider | Booster'],['מאפיינים','Zero-Moisture | SLIM Profile']],downloads:[{n:'גיליון טכני — A',u:'https://airforcespa.it/wp-content/uploads/PFAF000063.pdf'},{n:'תווית אנרגיה — A',u:'https://airforcespa.it/wp-content/uploads/ELAF000063.pdf'},{n:'גיליון טכני — F',u:'https://airforcespa.it/wp-content/uploads/PFAF000113.pdf'},{n:'תווית אנרגיה — F',u:'https://airforcespa.it/wp-content/uploads/ELAF000113.pdf'}]},
+  'innova-artis-prima':{name:'INNOVA ARTIS PRIMA',cat:'כירייה קולטת',imgs:['https://airforcespa.it/wp-content/uploads/Artis-prima-3.jpg','https://airforcespa.it/wp-content/uploads/Air_Force_Artis_60_Prima_HD_pp-3-1920x1397.jpg','https://airforcespa.it/wp-content/uploads/Artis-Prima-1.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/Innova-Artis-Prima-copia-1.pdf',specs:[['דגמים','INNOVA ARTIS PRIMA 60/80 — A/F Petra'],['דירוג אנרגיה','A'],['ספיקת אוויר','570 מ"ק/ש'],['רמת רעש','39/64/70 dB(A)'],['הספק','7.2 kW'],['אזורי בישול','4 (2 עגולים 1.2 kW + 2 עגולים 1.5 kW)'],['ממדים','60×52 או 80×52 ס"מ'],['בקרה','Touch Slider | 9 רמות הספק + Booster'],['מאפיינים','Zero-Moisture | 5 מהירויות ספיגה (4+1 집중)'],['קודי מוצר','CCINN6002 / CCINN8303 / AF000021 / AF000023']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00011W-7.pdf'},{n:'גיליון טכני 60 A',u:'https://airforcespa.it/wp-content/uploads/PFCCINN6005.pdf'},{n:'תווית אנרגיה 60 A',u:'https://airforcespa.it/wp-content/uploads/ELCCINN6005.pdf'},{n:'גיליון טכני 60 F',u:'https://airforcespa.it/wp-content/uploads/PFCCINN6002-2.pdf'},{n:'תווית אנרגיה 60 F',u:'https://airforcespa.it/wp-content/uploads/ELCCINN6002-2.pdf'},{n:'גיליון טכני 80',u:'https://airforcespa.it/wp-content/uploads/PFAF000113.pdf'},{n:'תווית אנרגיה 80',u:'https://airforcespa.it/wp-content/uploads/ELAF000113.pdf'}]},
+  'innova-artis-evo':{name:'INNOVA ARTIS EVO 72',cat:'כירייה קולטת',imgs:['https://airforcespa.it/wp-content/uploads/AIRFORCE_ARTIS-72-EVO_Amb_hd_pp-1320x1920.jpg','https://airforcespa.it/wp-content/uploads/AIRFORCE_ARTIS-72-EVO_zen_hd_pp-1920x1397.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AIRFORCE-DISEGNI-TECNICI-SITO_INNOVA-ARTIS-EVO-72.svg',specs:[['דגמים','INNOVA ARTIS EVO 72 — A/F'],['דירוג אנרגיה','A'],['ספיקת אוויר','570 מ"ק/ש'],['רמת רעש','39/64/70 dB(A)'],['הספק','7.4 kW'],['אזורי בישול','4 (עיצוב חדש עם דרגות שונות)'],['ממדים','72×52 ס"מ'],['בקרה','Touch Slider Full Black | 9 רמות + Booster'],['מאפיינים','Zero-Moisture | 5 מהירויות ספיגה (4+1 집중)']],downloads:[{n:'גיליון טכני — A',u:'https://airforcespa.it/wp-content/uploads/PFAF000125.pdf'},{n:'תווית אנרגיה — A',u:'https://airforcespa.it/wp-content/uploads/ELAF000125.pdf'},{n:'גיליון טכני — F',u:'https://airforcespa.it/wp-content/uploads/PFAF000126.pdf'},{n:'תווית אנרגיה — F',u:'https://airforcespa.it/wp-content/uploads/ELAF000126.pdf'}]},
+  'innova-standard':{name:'INNOVA STANDARD',cat:'כירייה קולטת',imgs:['https://airforcespa.it/wp-content/uploads/Air_Force_Visio_PLUS_Vert_HD_QUADRATApp.jpg','https://airforcespa.it/wp-content/uploads/Air_Force_VISIOPLUS_ZEN_HD_pp-copia-1-1920x1397.jpg','https://airforcespa.it/wp-content/uploads/Air_Force_Visio_Flex_Front_Cass_Aperto_HD_pp-1380x1920.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/Innova-Visio-copia.pdf',specs:[['דגמים','INNOVA VISIO PLUS (Standard Version)'],['דירוג אנרגיה','A'],['ספיקת אוויר','665 מ"ק/ש'],['רמת רעש','42/67/71 dB(A)'],['הספק','7.4 kW'],['אזורי בישול','4 × 2.1 kW (Boost 3 kW)'],['ממדים','90×52 ס"מ'],['בקרה','Touch Slider | Power Management 1.4-7.4 kW'],['מאפיינים','Zero-Moisture | Touch Control Standard']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00053W.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/Innova-Visio-copia.pdf'},{n:'גיליון טכני A',u:'https://airforcespa.it/wp-content/uploads/PFCCINNV9001-1.pdf'},{n:'תווית אנרגיה A',u:'https://airforcespa.it/wp-content/uploads/ELCCINNV9001-1.pdf'}]},
+  'f181':{name:'F181',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/F181_bk_COPERTINApp-1-1920x1084.jpg','https://airforcespa.it/wp-content/uploads/F181-WH-Ambiente-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/F181-BK-Ambiente-1-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AFLIF181V2-1.pdf',specs:[['דגמים','45 ס"מ — שחור / לבן'],['דירוג אנרגיה','B'],['ספיקת אוויר','725 מ"ק/ש'],['רמת רעש','50 / 65 / 69 dB(A)'],['הספק','254.2 W'],['תאורה','2×2.1W LED – 3500K – 336 Lux'],['בקרה','שלט רחוק 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','45 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','סינון בלבד | פילטרי ריח כלולים'],['קודי מוצר','CCF18145566 / CCF18145567']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/X-F181-classe-A-copia-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF18145566-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF18145566-1.pdf'}]},
+  'gaia-xxl':{name:'GAIA XXL',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/Gaia-Island_pp-1920x1587.jpg','https://airforcespa.it/wp-content/uploads/Gaia-LowFront-100-BK-1-1320x1920.jpg','https://airforcespa.it/wp-content/uploads/Gaia-LowFront-100-IX-1-1320x1920.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AFLIGASH01-1.pdf',specs:[['דגמים','100 ס"מ — נירוסטה / שחור'],['דירוג אנרגיה','C'],['ספיקת אוויר','600 מ"ק/ש'],['רמת רעש','49 / 64 / 68 dB(A)'],['הספק','183.4 W'],['תאורה','4×2.1W LED – 3500K – 300 Lux'],['בקרה','לוח אלקטרוני 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','100 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','זווית 45° — גרסה XXL | סינון בלבד | פילטרי ריח כלולים'],['קודי מוצר','CCGAI100001 / CCGAI100002']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/Gaia-100-copia-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCGAI100001-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCGAI100001-1.pdf'}]},
+  'f181-xxl':{name:'F181 XXL',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/F181-XXL_BK_pp-1920x1440.jpg','https://airforcespa.it/wp-content/uploads/F181-XXL-100-BK-Ambiente-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/F181-XXL-100-WH-Ambiente-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/F181-XXL100-BK-Particolare-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AFLIF181V2-1.pdf',specs:[['דגמים','70 / 100 ס"מ — שחור / לבן'],['דירוג אנרגיה','B'],['ספיקת אוויר','70: 725 מ"ק/ש | 100: 735 מ"ק/ש'],['רמת רעש','50 / 65 / 69 dB(A)'],['הספק','254.2 W'],['תאורה','2×2.1W LED – 3500K – 336 Lux'],['בקרה','שלט רחוק 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','70/100 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','ריבועי XXL | סינון בלבד | פילטרי ריח כלולים'],['קודי מוצר','CCF18170540 / CCF18170541 / CCF181100535 / CCF181100536']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/X-F181-xxl-1-copia.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF18170540-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF18170540-1.pdf'}]},
+  'ballerina':{name:'BALLERINA YOUNG',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/Ballerina_YOUNG_pp-1-1920x1147.jpg','https://airforcespa.it/wp-content/uploads/BallerinaAmbienteNeraECO-1920x1920.jpg','https://airforcespa.it/wp-content/uploads/BallerinaAmbienteBiancaECO-1920x1920.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AFLIBALLERINA-1.pdf',specs:[['דגמים','47.5 ס"מ — שחור / לבן'],['דירוג אנרגיה','C'],['ספיקת אוויר','610 מ"ק/ש'],['רמת רעש','49 / 64 / 68 dB(A)'],['הספק','179.2 W'],['תאורה','2×2.1W LED – 3500K – 420 Lux'],['בקרה','תצוגת Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','47.5 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','עיצוב כיפה עגולה | סינון בלבד | פילטרי ריח כלולים'],['קודי מוצר','CCBAL5062 / CCBAL5063']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/X-ballerina-copia-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCBAL5062-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCBAL5062-1.pdf'}]},
+  'eclipse':{name:'ECLIPSE',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/Air_fondo_ECLIPSE_NERO_HD_pp-1920x1920.jpg','https://airforcespa.it/wp-content/uploads/Air_fondo_ECLIPSE_BIANCA_HD_pp-copia-1-rotated.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-eclipse-copia-1.pdf',specs:[['דגמים','90 ס"מ — שחור / לבן / לבן מבריק'],['ספיקת אוויר','600 מ"ק/ש'],['רמת רעש','54 / 67 / 69 dB(A)'],['הספק','94 W'],['תאורה','9W Strip LED – 4000K – 378 Lux'],['בקרה','שלט רחוק 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','90×56 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','עיצוב כיפה עם תצוגה | סינון בלבד | פילטרי ריח Long Life כלולים'],['קודי מוצר','CCECL9078 / CCECL9079 / CCECL9080']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIECL01-1.pdf'}]},
+  'square-young':{name:'SQUARE YOUNG',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/Square-ambiente_NERA_YOUNG_pp-1920x1313.jpg','https://airforcespa.it/wp-content/uploads/Square-ambiente_WH_ECO-1920x1920.jpg','https://airforcespa.it/wp-content/uploads/SquareParticolare_BK_ECO-1920x1920.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/AFLISQUARE-2.pdf',specs:[['דגמים','45×45 ס"מ — שחור / לבן'],['דירוג אנרגיה','C'],['ספיקת אוויר','615 מ"ק/ש'],['רמת רעש','49 / 64 / 68 dB(A)'],['הספק','179.4 W'],['תאורה','2×2.2W LED – 4000K – 124 Lux'],['בקרה','תצוגת Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','45×45 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','סינון בלבד | פילטרי ריח כלולים'],['קודי מוצר','CCSQUARE4549 / CCSQUARE4550']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/X-square-copia-2.pdf'},{n:'סרטוט מידות',u:'https://airforcespa.it/wp-content/uploads/AFLISQUARE-2.pdf'}]},
+  'square-crisalide':{name:'SQUARE CRISALIDE',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/Square-ambiente_NERA_crisalide_pp-2-1920x1312.jpg','https://airforcespa.it/wp-content/uploads/Square-ambiente-1920x1920.jpg','https://airforcespa.it/wp-content/uploads/SquareParticolare_NERA-1920x1920.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-square-copia-1.pdf',specs:[['דגמים','45×45 ס"מ — שחור / לבן'],['דירוג אנרגיה','B'],['ספיקת אוויר','705 מ"ק/ש'],['רמת רעש','50 / 65 / 68 dB(A)'],['הספק','254 W'],['תאורה','4×1W LED – 4000K – 112 Lux'],['בקרה','תצוגת Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','45×45 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','תצוגה עם שעון | סינון בלבד | פילטרי Long Life כלולים'],['קודי מוצר','CCSQUARE4537 / CCSQUARE4538']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLISQUARE-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCSQUARE4537-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCSQUARE4537-1.pdf'}]},
+  'f206':{name:'F206',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/F206-intera_pp-1920x1217.jpg','https://airforcespa.it/wp-content/uploads/F206-particolare-WH-1920x1357.jpg','https://airforcespa.it/wp-content/uploads/F206-TSL-Schmidt-2-1920x1528.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-f206-corretto-copia-1.pdf',specs:[['דגמים','90 ס"מ — שחור / לבן'],['דירוג אנרגיה','A'],['ספיקת אוויר','610 מ"ק/ש'],['רמת רעש','48 / 62 / 66 dB(A)'],['הספק','228.4 W'],['תאורה','4×2.1W LED – 3500K – 589 Lux'],['בקרה','Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','90×60 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','עיצוב מלבני שטוח | פילטרי ריח כלולים'],['קודי מוצר','CCF2069516 / CCF2069517']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIF205-3.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF2069516-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF2069516-1.pdf'}]},
+  'f97':{name:'F97',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/F97-90x60_COPERTINA_pp-1-1920x1240.jpg','https://airforcespa.it/wp-content/uploads/F97-tse-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-F97-tse-copia-1.pdf',specs:[['דגמים','60 / 90 ס"מ — נירוסטה'],['דירוג אנרגיה','A'],['ספיקת אוויר','620 מ"ק/ש'],['רמת רעש','48 / 64 / 68 dB(A)'],['הספק','228.4 W'],['תאורה','4×2.1W LED – 3500K – 589 Lux'],['בקרה','Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','60/90×60 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','עיצוב מלבני נירוסטה | פילטרי ריח כלולים'],['קודי מוצר','CCF976503 / CCF979524']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIF100NTSE-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF976503-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF976503-1.pdf'}]},
+  'f54':{name:'F54',cat:'קולט אדים — אי מטבח',imgs:['https://airforcespa.it/wp-content/uploads/F54-BK-Scontornata_COPERTINA_pp-1-1920x1324.jpg','https://airforcespa.it/wp-content/uploads/F54-S4-full-BK-1920x1280.jpg','https://airforcespa.it/wp-content/uploads/F54-S4-IX-comBK-1920x1280.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-F54-90x60-60x60-S4-copia-1.pdf',specs:[['דגמים','90 ס"מ — נירוסטה / שחור'],['דירוג אנרגיה','A'],['ספיקת אוויר','625 מ"ק/ש'],['רמת רעש','48 / 66 dB(A)'],['הספק','228.4 W'],['תאורה','4×2.1W LED – 4000K – 236 Lux'],['בקרה','לחצנים מכניים 4 מהירויות'],['ממדים','90×60 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','עיצוב T-Shape | פילטרי ריח כלולים'],['קודי מוצר','CCF549533 / CCF549546']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIPLS4-4.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF549533-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF549533-1.pdf'}]},
+  'f177-v8':{name:'F177 V8',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/V8_dettaglio-1-1920x1280.jpg','https://airforcespa.it/wp-content/uploads/Vitamina-V8-Schmidt-inox-1-1920x1440.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/VITAMINA-8-1.pdf',specs:[['דגמים','60/90 ס"מ — נירוסטה'],['דירוג אנרגיה','A'],['ספיקת אוויר','675 מ"ק/ש'],['רמת רעש','50 / 60 / 66 dB(A)'],['הספק','224.2 W'],['תאורה','2×2.1W LED – 4000K – 143 Lux'],['בקרה','Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','60/90 ס"מ'],['מרחק מכיריה חשמלית','40 ס"מ'],['מרחק מכיריה גז','60 ס"מ'],['מאפיינים','עיצוב פלדה שטוחה | שאיבה היקפית | ערכת ארובות כלולה'],['קודי מוצר','CCF177V86504 / CCF177V89516']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIF177V-3.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF177V86504-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF177V86504-1.pdf'}]},
+  'vis-boxy-nodrop-wall':{name:'VIS BOXY NO DROP',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/VIS-Boxy-testC-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/ProBOX-IX-ambiente-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-Vis-wall-copia-1.pdf',specs:[['דגמים','90/120 ס"מ — נירוסטה / שחור מט'],['דירוג אנרגיה','A++'],['ספיקת אוויר','800 מ"ק/ש'],['רמת רעש','44 / 62 / 70 dB(A)'],['הספק','90: 179.8W | 120: 184W'],['תאורה','90: 4.8W Strip LED 4000K | 120: 9W Strip LED 4000K'],['בקרה','רוטטיבית אלקטרונית'],['ממדים','90/120 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['מאפיינים','מערכת No-Drop עם Baffle נירוסטה'],['קודי מוצר','CCVISW90003 / CCVISW90004 / CCVISW120003 / CCVISW120004']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIVIS-3.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCVISW90003-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCVISW90003-1.pdf'}]},
+  'foehn-nodrop':{name:'FOEHN NO DROP',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/Foehn-Aperta-Accesa-1920x1200.jpg','https://airforcespa.it/wp-content/uploads/Foehn_COPERTINA_pp-1-1920x1132.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/Foehn-3.pdf',specs:[['דגמים','60/90 ס"מ — שחור'],['דירוג אנרגיה','A'],['ספיקת אוויר','600 מ"ק/ש'],['רמת רעש','46 / 60 / 66 dB(A)'],['הספק','207 W'],['תאורה','7W Strip LED – 3000K – 253 Lux'],['בקרה','Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','60/90 ס"מ'],['מרחק מכיריה חשמלית','45 ס"מ'],['מרחק מכיריה גז','60 ס"מ'],['מאפיינים','מערכת No-Drop עם זכוכית מחוממת (הפעלה אוטומטית/ידנית) | ערכת ארובות כלולה'],['קודי מוצר','CCF6001 / CCF9001']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LIB0188422_03-2023-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF6001-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF6001-1.pdf'}]},
+  'f203':{name:'F203',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/F203_copertina-1920x1387.jpg','https://airforcespa.it/wp-content/uploads/F203_Ambiente-1-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/F203_Ambiente-WH-WH-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/F203-1.pdf',specs:[['דגמים','60/80/90 ס"מ — שחור / לבן'],['דירוג אנרגיה','A'],['ספיקת אוויר','660 מ"ק/ש'],['רמת רעש','50 / 60 / 66 dB(A)'],['הספק','224.2 W'],['תאורה','2×2.1W LED – 3500K – 378 Lux'],['בקרה','Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','60/80/90 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['עיצוב','נטוי אלגנטי | שאיבה היקפית | ערכת ארובות כלולה'],['קודי מוצר','CCF2036532 / CCF2036535 / CCF2038512 / CCF2038525 / CCF2039541 / CCF2039542']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00035W.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF2036532-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF2036532-1.pdf'}]},
+  'f212':{name:'F212',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/F212_COPERTINA_pp-1-1920x1211.jpg','https://airforcespa.it/wp-content/uploads/F212-60-ambiente-Schmidt-1-1920x1920.jpg','https://airforcespa.it/wp-content/uploads/F212_90-ecowall-1-1920x1440.jpg'],drawing:null,specs:[['דגמים','60/80/90 ס"מ — שחור'],['דירוג אנרגיה','C'],['ספיקת אוויר','575 מ"ק/ש'],['רמת רעש','50 / 68 dB(A)'],['הספק','179.2 W'],['תאורה','2×2.1W LED – 3500K – 378 Lux'],['בקרה','לחצנים מכניים 4 מהירויות'],['ממדים','60/80/90 ס"מ'],['מרחק מכיריה חשמלית','40 ס"מ'],['מרחק מכיריה גז','60 ס"מ'],['עיצוב','נטוי חד | שאיבה היקפית | ערכת ארובות כלולה'],['קודי מוצר','CCF2126505 / CCF2128502 / CCF2129509']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00033W.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF2126505.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF2126505.pdf'}]},
+  'b-ox':{name:'B-OX',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/B-OX-Schueller-4-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/B-OX-Particolare-TSE-new-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/B-OX-Ambiente-TSE-new-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/B-Ox-1-copia-1.pdf',specs:[['דגמים','60/90 ס"מ — נירוסטה / שחור'],['דירוג אנרגיה','A'],['ספיקת אוויר','620 מ"ק/ש'],['רמת רעש','48 / 61 / 65 dB(A)'],['הספק','224.8 W'],['תאורה','4.8W Strip LED – 4000K – 107 Lux'],['בקרה','Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','60/90 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['עיצוב','ריבועי'],['קודי מוצר','CCB-OX60501 / CCB-OX60502 / CCB-OX90511 / CCB-OX90515']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00021W-2.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCB-OX60501-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCB-OX60501-1.pdf'}]},
+  'f-205':{name:'F-205',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/F205-ambiente-INOX_COPERTINApp-1-1920x1553.jpg','https://airforcespa.it/wp-content/uploads/F205-particolare-INOX-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/F205-ambiente-INOX-Bianco-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-F205-copia-1.pdf',specs:[['דגמים','60/90 ס"מ — שחור / לבן'],['דירוג אנרגיה','A'],['ספיקת אוויר','610 מ"ק/ש'],['רמת רעש','48 / 62 / 66 dB(A)'],['הספק','224.2 W'],['תאורה','2×2.1W LED – 3500K – 504 Lux'],['בקרה','Touch 4 מהירויות (3+1 אינטנסיבי)'],['ממדים','60/90 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['עיצוב','שטוח נירוסטה'],['קודי מוצר','CCF2056504 / CCF2056505 / CCF2059537 / CCF2059538']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIF205-1.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF2056504-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF2056504-1.pdf'}]},
+  'f53-d2':{name:'F53 D2',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/F53-D2_copertina.jpg','https://airforcespa.it/wp-content/uploads/F53-D2-ambientata-1920x1278.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-F53-D2-copia-1.pdf',specs:[['דגמים','60/90 ס"מ — נירוסטה'],['דירוג אנרגיה','C'],['ספיקת אוויר','370 מ"ק/ש'],['רמת רעש','59 / 66 dB(A)'],['הספק','94.2 W'],['תאורה','2×2.1W LED – 3500K – 504 Lux'],['בקרה','סליידר 3 מהירויות'],['ממדים','60/90 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['עיצוב','פירמידה קלאסית'],['קודי מוצר','CCF53D26024 / CCF53D29031']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIDUFN-raster-4.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF53D26024-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF53D26024-1.pdf'}]},
+  'f53-s4':{name:'F53 S4',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/F53_S4_copertina-1920x1168.jpg','https://airforcespa.it/wp-content/uploads/F53-IX-S4-Foster-1-1920x1080.jpg','https://airforcespa.it/wp-content/uploads/F53-BK-S4-full-BK-1-1920x1080.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-F53-D2-1-copia-3.pdf',specs:[['דגמים','60/90 ס"מ — נירוסטה / שחור'],['דירוג אנרגיה','A'],['ספיקת אוויר','630 מ"ק/ש'],['רמת רעש','48 / 66 dB(A)'],['הספק','224.2 W'],['תאורה','2×2.1W LED – 4000K – 118 Lux'],['בקרה','לחצנים מכניים 4 מהירויות'],['ממדים','60/90 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['עיצוב','פירמידה'],['קודי מוצר','CCF536540 / CCF536560 / CCF539580 / CCF539597']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/AFLIPLS4-2.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF536540-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF536540-1.pdf'}]},
+  'f0-s4':{name:'F0 S4',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/F0_S4_copertina-1920x1610.jpg','https://airforcespa.it/wp-content/uploads/F0-S4-60-1920x1278.jpg','https://airforcespa.it/wp-content/uploads/F0_S4_90_flat-1920x1278.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-F0-90-s4-copia.pdf',specs:[['דגמים','60/90 ס"מ — נירוסטה'],['דירוג אנרגיה','B'],['ספיקת אוויר','645 מ"ק/ש'],['רמת רעש','50 / 71 dB(A)'],['הספק','254.2 W'],['תאורה','2×2.1W LED – 3500K – 336 Lux'],['בקרה','לחצנים מכניים 4 מהירויות'],['ממדים','60/90 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['עיצוב','נירוסטה קלאסי'],['קודי מוצר','CCF06530 / CCF09533']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00027W.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF06530-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF06530-1.pdf'}]},
+  'f0-d2':{name:'F0 D2',cat:'קולט אדים — קיר',imgs:['https://airforcespa.it/wp-content/uploads/F0_D2_ambiente-3.jpg','https://airforcespa.it/wp-content/uploads/F0-60_D2_NERA-1920x1440.jpg','https://airforcespa.it/wp-content/uploads/F0_D2_ambiente-5-1920x1278.jpg'],drawing:'https://airforcespa.it/wp-content/uploads/X-F0-60-90-k1-copia-2.pdf',specs:[['דגמים','60/90 ס"מ — נירוסטה / שחור'],['דירוג אנרגיה','C'],['ספיקת אוויר','385 מ"ק/ש'],['רמת רעש','59 / 66 dB(A)'],['הספק','94.2 W'],['תאורה','2×2.1W LED – 3500K – 336 Lux'],['בקרה','סליידר 3 מהירויות'],['ממדים','60/90 ס"מ'],['מרחק מכיריה חשמלית','50 ס"מ'],['מרחק מכיריה גז','65 ס"מ'],['עיצוב','נטוי נירוסטה'],['קודי מוצר','CCF0D26501 / CCF0D26502 / CCF0D29501 / CCF0D29502']],downloads:[{n:'הוראות התקנה',u:'https://airforcespa.it/wp-content/uploads/LBR00026W.pdf'},{n:'גיליון טכני',u:'https://airforcespa.it/wp-content/uploads/PFCCF0D26501-1.pdf'},{n:'תווית אנרגיה',u:'https://airforcespa.it/wp-content/uploads/ELCCF0D26501-1.pdf'}]},
+  'prima-domino-30':{name:'PRIMA DOMINO 30',cat:'כירייה — דומינו',imgs:['https://airforcespa.it/wp-content/uploads/Domino-POP-30_pp-2-1920x1731.jpg'],drawing:null,specs:[['אזורי בישול','2 אזורים'],['ממדים','30×52 ס"מ'],['חיתוך','270×490 מ"מ'],['הספק','3.2 kW'],['בקרה','Touch + Boost'],['נעילת ילדים','כן']],downloads:[]},
+  'prima-60-3':{name:'PRIMA 60-3',cat:'כירייה — אינדוקציה',imgs:['https://airforcespa.it/wp-content/uploads/POP-60_3Z_pp-2-1920x1731.jpg'],drawing:null,specs:[['אזורי בישול','3 אזורים'],['ממדים','59×52 ס"מ'],['הספק','5.2 kW'],['בקרה','Touch'],['נעילת ילדים','כן'],['גוון','שחור קריסטל']],downloads:[]},
+  'easy-90-p':{name:'EASY 90 P',cat:'כירייה — אינדוקציה',imgs:['https://airforcespa.it/wp-content/uploads/EASY_90_pp-5-1920x1731.jpg'],drawing:null,specs:[['אזורי בישול','5 אזורים'],['ממדים','88×52 ס"מ'],['הספק','7.4 kW'],['בקרה','Touch + Boost'],['נעילת ילדים','כן'],['גוון','שחור קריסטל']],downloads:[]},
+  'teppanyaki-58':{name:'TEPPANYAKI 58',cat:'לוח טפן יאקי',imgs:['https://airforcespa.it/wp-content/uploads/TeppanYaki-38_pp-2-1920x1731.jpg'],drawing:null,specs:[['ממדים','58×52 ס"מ'],['חומר','ברזל יצוק'],['הספק','3.7 kW'],['בקרה','Touch'],['שימוש','טפן יאקי, בשר, ביצים, פנקייק'],['גוון','אפור']],downloads:[]},
+};
+
+let currentDrawingUrl=null;
+
+function setThumb(id,src,el){document.getElementById('tm-'+id).src=src;el.closest('.prod-thumb-strip').querySelectorAll('.prod-thumb').forEach(t=>t.classList.remove('active'));el.classList.add('active');}
+
+function showCat(cat,el){document.querySelectorAll('.products-section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));document.getElementById('cat-'+cat).classList.add('active');el.classList.add('active');}
+function goToCat(cat){const tab=document.querySelector(`.cat-tab[onclick*="'${cat}'"]`);if(tab)showCat(cat,tab);document.getElementById('products').scrollIntoView({behavior:'smooth'});}
+
+function openModal(id){
+  const p=PRODUCTS[id];if(!p)return;
+  document.getElementById('mCat').textContent=p.cat;
+  document.getElementById('mName').textContent=p.name;
+  document.getElementById('mMainImg').src=p.imgs[0];
+  let th='';p.imgs.forEach((s,i)=>{th+=`<img class="modal-thumb${i===0?' active':''}" src="${s}" onclick="setModalImg(this)" alt="">`;});
+  document.getElementById('mThumbs').innerHTML=th;
+  currentDrawingUrl=p.drawing||null;
+  document.getElementById('mDrawingBtn').style.display=p.drawing?'flex':'none';
+  let sp='';p.specs.forEach(([l,v])=>{sp+=`<tr><td>${l}</td><td>${v}</td></tr>`;});
+  document.getElementById('mSpecs').innerHTML=sp;
+  let dl='';
+  if(p.downloads&&p.downloads.length>0){
+    p.downloads.forEach(d=>{dl+=`<a href="${d.u}" target="_blank" class="download-item"><div class="dl-icon">📄</div><div><div class="dl-name">${d.n}</div><div class="dl-type">PDF</div></div></a>`;});
+    if(p.drawing)dl+=`<a href="${p.drawing}" target="_blank" class="download-item"><div class="dl-icon">📐</div><div><div class="dl-name">סרטוט מידות טכני</div><div class="dl-type">PDF</div></div></a>`;
+  }else{dl='<p style="color:var(--text-faint);font-size:13px;padding:12px 0">מסמכים אינם זמינים לדגם זה כרגע</p>';}
+  document.getElementById('mDownloads').innerHTML=dl;
+  document.querySelectorAll('.modal-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.modal-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelector('.modal-tab').classList.add('active');
+  document.getElementById('panel-specs').classList.add('active');
+  document.getElementById('modal').classList.add('active');
+  document.body.style.overflow='hidden';
+}
+
+function setModalImg(el){document.getElementById('mMainImg').src=el.src;document.querySelectorAll('.modal-thumb').forEach(t=>t.classList.remove('active'));el.classList.add('active');}
+function openDrawing(){if(currentDrawingUrl)window.open(currentDrawingUrl,'_blank');}
+function switchTab(tab,el){document.querySelectorAll('.modal-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.modal-panel').forEach(p=>p.classList.remove('active'));el.classList.add('active');document.getElementById('panel-'+tab).classList.add('active');}
+function closeModal(){document.getElementById('modal').classList.remove('active');document.body.style.overflow='';}
+function closeModalOuter(e){if(e.target===document.getElementById('modal'))closeModal();}
+function submitForm(e){e.preventDefault();alert('תודה! פנייתך התקבלה.\nניצור איתך קשר תוך 24 שעות.');}
+
+window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>50);});
+
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.08});
+document.querySelectorAll('.product-card,.innova-card,.stat-item').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity 0.6s ease,transform 0.6s ease';io.observe(el);});
+</script>
+</body>
+</html>
